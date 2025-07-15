@@ -1,0 +1,124 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+@keyframes abrirSobre {
+  from {
+    transform: translateX(-50%) rotateX(60deg);
+  }
+}
+@keyframes abrirPopup {
+  from {
+    box-sizing: border-box;
+    scale: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* -------------------------------------- CLASE DE INVITACION CLOSE  --------------------------------- */
+.target_invitation {
+  position: relative;
+  background-color: var(--color-beige) !important;
+  border: 1px solid var(--gris-claro);
+  box-shadow: 2px 5px 10px 0px var(--gris-claro);
+  width: 350px;
+  height: 260px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.triangle-invitation {
+  position: sticky;
+  z-index: 9;
+  width: 0;
+  height: 0;
+  border-left: 175px solid transparent;
+  border-right: 175px solid transparent;
+  border-top: 140px solid var(--color-rosa);
+  transition: transform 0.6s ease; /* 🎯 Transición suave */
+}
+
+.triangle-invitation::after {
+  content: "";
+  position: absolute;
+  bottom: -18px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 20px;
+  background-color: var(--color-beige);
+  border-radius: 50%;
+}
+
+/* -------------------------------------- CLASE DE INVITACION ABIERTA  --------------------------------- */
+.target_invitation_closed {
+  position: relative;
+  background-color: var(--color-beige) !important;
+  border: 1px solid var(--gris-claro);
+  box-shadow: 2px 5px 10px 0px var(--gris-claro);
+  width: 350px;
+  height: 260px;
+  border-radius: 10px;
+}
+
+.triangle-invitation-closed {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotateX(120deg);
+  transform-origin: top center;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-left: 170px solid transparent;
+  border-right: 170px solid transparent;
+  border-top: 270px solid var(--color-rosa);
+  animation: abrirSobre 0.6s ease forwards;
+} 
+
+/* -------------------------------------- CLASES DEL POPUP DE INVITACION  --------------------------------- */
+
+.content-popup{
+    background-color: rgba(240, 248, 255, 0.411);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.popup{
+    background-color: var(--color-rosa);
+    color: var(--gris-oscuro);
+    height: 240px;
+    width: 325px;
+    border: 1px solid var(--gris-oscuro);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: abrirPopup 0.6s linear;
+}
+
+
+.popup input{
+    border-radius: 10px;
+    border: 1px solid var(--gris-oscuro);
+    padding: 0 10px;
+}
+
+.popup button{
+    width: 120px;
+    border-radius: 10px;
+    border: 1px solid var(--gris-oscuro);
+    background-color: var(--color-beige);
+}
