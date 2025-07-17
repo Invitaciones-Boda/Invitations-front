@@ -2,16 +2,23 @@
 
 
 // FUNCION PARA INGRESAR A LA INVITACION
-window.ingresarInvitaion = async function (){
+window.ingresarInvitaion = async function () {
     let valor = document.getElementById("code").value;
-    if(!valor){
+    if (!valor) {
         alert('No se recibio un codigo de invitación');
     }
-    alert(valor)
+
+    //PETICION AL BACK END 
+    if (valor == "ABC123") {
+        location.href = "/invitation/invitation.html";
+    }else{
+        alert("Codigo incorrecto");
+    }
+
 }
 
 // FUNCION PARA ABRIR LA TARJETA DE INVITACION
-window.openTargetInvitation = function() {
+window.openTargetInvitation = function () {
     // Tomar los elementos
     const targetEl = document.getElementById("target_invitation");
     const triangleEl = document.getElementById("triangle-invitation");
@@ -30,21 +37,21 @@ window.openTargetInvitation = function() {
     setTimeout(() => {
         openPopUp();
     }, 500);
-    
+
 };
 
 
 // FUNCION PARA ABRIR EL POPUP DE LA INVITACION 
 window.openPopUp = function () {
-  // Tomar el elemento
-  const popUp = document.getElementById("popup-invitation");
+    // Tomar el elemento
+    const popUp = document.getElementById("popup-invitation");
 
-  if (!popUp) {
-    console.error("No se encontró el elemento con id 'popup-invitation'");
-    return;
-  }
+    if (!popUp) {
+        console.error("No se encontró el elemento con id 'popup-invitation'");
+        return;
+    }
 
-  // Cambiar display a flex
-  popUp.style.display = "flex";
+    // Cambiar display a flex
+    popUp.style.display = "flex";
 };
 
