@@ -1,5 +1,18 @@
-#iframe {
-  width: 100vw;
+*{
+  box-sizing: border-box;
+}
+body, html{
+  margin: 0;
+  padding: 0;
   height: 100vh;
+  overflow: hidden;
+}
+
+#iframe {
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
   border: none;
+  background-image: url('../sources/fondo.png');
 }

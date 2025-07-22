@@ -25,14 +25,13 @@ async function ingresarInvitaion() {
 
     try {
         let state = await ingresar(valor);
-
         if (state) {
             location.href = "/invitation/invitation.html";
         }
 
     } catch (error) {
         // Manejo seguro del mensaje de error
-        let mensaje = error?.responseText || "Error al procesar la solicitud.";
+        let mensaje = error?.responseJSON.message || "Error al procesar la solicitud.";
         alert(mensaje);
     }
 
