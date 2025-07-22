@@ -1,21 +1,43 @@
-
-
+// FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
+async function ingresar(valor) {
+    return new Promise(function (resolve, reject) {
+        $.ajax({
+            url: 'http://localhost:8000/invitation/ingreso/',
+            type: 'POST',
+            data: { codigo: valor },
+            success: function (response) {
+                resolve(response);
+            },
+            error: function (error) {
+                reject(error);
+            }
+        });
+    });
+}
 
 // FUNCION PARA INGRESAR A LA INVITACION
-window.ingresarInvitaion = async function () {
+async function ingresarInvitaion() {
     let valor = document.getElementById("code").value;
     if (!valor) {
-        alert('No se recibio un codigo de invitación');
+        alert('No se recibió un código de invitación');
+        return;
     }
 
-    //PETICION AL BACK END 
-    if (valor == "ABC123") {
-        location.href = "/invitation/invitation.html";
-    }else{
-        alert("Codigo incorrecto");
+    try {
+        let state = await ingresar(valor);
+
+        if (state) {
+            location.href = "/invitation/invitation.html";
+        }
+
+    } catch (error) {
+        // Manejo seguro del mensaje de error
+        let mensaje = error?.responseText || "Error al procesar la solicitud.";
+        alert(mensaje);
     }
 
 }
+
 
 // FUNCION PARA ABRIR LA TARJETA DE INVITACION
 window.openTargetInvitation = function () {
