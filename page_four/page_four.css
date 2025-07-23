@@ -1,7 +1,16 @@
 *{
   box-sizing: border-box;
-}
-body, html{
+  font-family: 'Caveat', cursive;
   margin: 0;
   padding: 0;
 }
+body, html{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section img{
+  height: 150px;
+  width: 150px;
+}
+

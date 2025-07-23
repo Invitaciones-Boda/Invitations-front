@@ -30,7 +30,7 @@ async function ingresarInvitaion() {
         if (valor === "ABC123"){
             state = true
         }else{
-            let state = await ingresar(valor);
+            state = await ingresar(valor);
         }
 
         if (state) {

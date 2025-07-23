@@ -1,15 +1,23 @@
 *{
   box-sizing: border-box;
-}
-body, html{
+  font-family: 'Caveat', cursive;
   margin: 0;
   padding: 0;
+}
+body, html{
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 img{
-  height: 400px;
   width: 350px;
-  border: 1px solid black;
+}
+
+h1{
+  font-size: 36px;
+}
+
+.text-title{
+  font-size: 36px;
 }
