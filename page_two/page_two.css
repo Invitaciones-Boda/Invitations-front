@@ -19,12 +19,15 @@ body, html{
 .fecha{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .title-fecha{
+  width: 140px;
   font-size: 32px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .title-fecha img{
@@ -45,7 +48,11 @@ body, html{
 }
 
 .countdown h2{
+  width: 120px;
+  padding: 5px;
   font-size: 30px;
+  margin: 15px;
+  border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .countdown-container{
@@ -60,10 +67,99 @@ body, html{
   font-size: 24px;
   width: 40px;
   height: 35px;
-  background-color: antiquewhite;
+  margin: 0 2px;
+  background-color: var(--color-rosa);
   display: flex;
   text-align: center;
   justify-content: center;
+  border-radius: 8px;
 }
 
 /* CONTENEDOR NUESTA SEREMONIA */
+.ceremonia{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ceremonia h2{
+  width: 60%;
+  font-size: 28px;
+  margin: 2px;
+  border-bottom: 1px solid var(--gris-oscuro);
+}
+
+.ceremonia-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ceremonia-container div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 20px;
+}
+
+.ceremonia-details p{
+  font-size: 20px;
+  margin: 1px;
+}
+
+/* CONTENEDOR NUESTA CELEBREMOS */
+.celebremos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebremos h2{
+  font-size: 28px;
+  margin: 2px;
+  border-bottom: 1px solid var(--gris-oscuro);
+}
+
+.celebremos-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebremos-container div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 20px;
+}
+
+.celebremos-details p{
+  font-size: 20px;
+  margin: 1px;
+}
+
+/* DISEÑO DE BOTONES */
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-rosa);
+  color: var(--gris-oscuro);
+  margin: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+}
+
+.button img{
+  margin-left: 5px;
+}

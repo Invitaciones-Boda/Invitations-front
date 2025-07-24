@@ -9,8 +9,38 @@ body, html{
   flex-direction: column;
   text-align: center;
 }
+
+h1{
+  margin: 10px 0;
+  font-size: 30px;
+  color: var(--gris-oscuro);
+}
+
 section img{
   height: 150px;
   width: 150px;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid var(--gris-oscuro);
 }
 
+.content-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-rosa);
+  color: var(--gris-oscuro);
+  margin: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+}
