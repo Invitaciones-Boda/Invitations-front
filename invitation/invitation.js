@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ingresar(); // Página inicial
 
   let touchStartX = 0;
+  let touchStartTime = 0;
+  let moved = false;
 
   const container = document.getElementById("container");
   if (!container) {
@@ -46,33 +48,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   container.style.position = "relative";
 
-  // Crea una capa invisible para capturar el swipe
+  // Solo capa superior para capturar swipe (no bloquea botones abajo)
   const swipeLayer = document.createElement("div");
   swipeLayer.style.position = "absolute";
   swipeLayer.style.top = 0;
   swipeLayer.style.left = 0;
   swipeLayer.style.width = "100%";
-  swipeLayer.style.height = "100%";
-  swipeLayer.style.zIndex = 9999; // Encima de todo
+  swipeLayer.style.height = "80px"; // Solo en la parte superior
+  swipeLayer.style.zIndex = 1000;
   swipeLayer.style.background = "transparent";
+  swipeLayer.style.pointerEvents = "auto"; // Puede recibir eventos
   container.appendChild(swipeLayer);
 
   swipeLayer.addEventListener("touchstart", (e) => {
     touchStartX = e.changedTouches[0].screenX;
+    touchStartTime = Date.now();
+    moved = false;
+  });
+
+  swipeLayer.addEventListener("touchmove", () => {
+    moved = true;
   });
 
   swipeLayer.addEventListener("touchend", (e) => {
     const touchEndX = e.changedTouches[0].screenX;
     const diff = touchStartX - touchEndX;
+    const duration = Date.now() - touchStartTime;
 
-    if (Math.abs(diff) > 50) {
+    if (moved && Math.abs(diff) > 60 && duration > 100) {
       if (diff > 0) {
-        ingresar(1);
+        ingresar(1); // Swipe izquierda
       } else {
-        ingresar(-1);
+        ingresar(-1); // Swipe derecha
       }
     } else {
-      console.log("Swipe muy corto, ignorado");
+      console.log("Ignorado: clic o swipe muy corto/demasiado rápido");
     }
   });
 });
