@@ -1,4 +1,19 @@
-window. abrirPopup = function abrirPopup(tipo) {
+// FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
+function contador(valor) {
+    $.ajax({
+      url: "http://localhost:8000/invitation/contador/",
+      type: "POST",
+      data: { fecha: valor },
+      success: function (response) {
+        console.log("exito")
+      },
+      error: function (error) {
+         console.log("fallo")
+      },
+    });
+}
+
+function abrirPopup(tipo) {
   const containerCeremonia = document.getElementById(
     "container-popup-ceremonia"
   );
@@ -24,6 +39,11 @@ window. abrirPopup = function abrirPopup(tipo) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  let date = new Date();
+  console.log(date)
+
+contador(date)
+
   // Cierra popup al hacer clic fuera del contenido
   document.addEventListener("click", function (e) {
     const containerCeremonia = document.getElementById(
