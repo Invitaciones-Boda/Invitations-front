@@ -163,3 +163,84 @@ body, html{
 .button img{
   margin-left: 5px;
 }
+
+
+
+/* POPUP CEREMONIA */
+.container-popup-ceremonia{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.Popup-ceremonia{
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 62%;
+  background-color: var(--color-rosa);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-popup-celebracion{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.Popup-celebracion{
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 62%;
+  background-color: var(--color-rosa);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ubicacion{
+  width: 85%;
+  height: 40%;
+  background-color: antiquewhite;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.ubicacion-text{
+  width: 240px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.button-two{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-blanco);
+  margin: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 550;
+  text-decoration: none;
+  border: none;
+}

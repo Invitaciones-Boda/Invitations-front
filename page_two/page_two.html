@@ -15,10 +15,65 @@
     <link rel="stylesheet" href="./page_two.css" />
   </head>
   <body>
-    <div class="Popup" style="display: none;"></div>
+    <div class="container-popup-ceremonia" id="container-popup-ceremonia">
+      <div class="Popup-ceremonia" id="Popup-ceremonia">
+        <div class="ubicacion">
+          <iframe
+            src="https://www.google.com/maps?q=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia&output=embed"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p class="ubicacion-text">
+          Parroquia Santa Cecilia Barrio Venecia Dg 49 sur #53b-58
+        </p>
+
+        <button
+          class="button-two"
+          onclick="window.open('https://www.google.com/maps?daddr=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia', '_blank')"
+        >
+          Iniciar recorrido
+        </button>
+      </div>
+    </div>
+
+    <div class="container-popup-celebracion">
+      <div
+        class="Popup-celebracion"
+        id="Popup-celebracion"
+      >
+        <div class="ubicacion">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p class="ubicacion-text">
+          Estilo y moda casa de eventos Barrio Venecia Dg 48 #19-92 Tunjuelito
+        </p>
+
+        <button
+          class="button-two"
+          onclick="window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus', '_blank')"
+        >
+          Iniciar recorrido
+        </button>
+      </div>
+    </div>
 
     <section class="fecha">
-      <h2 class="title-fecha">Fecha<img src="../sources/calendario_icono.png" alt=""></h2>
+      <h2 class="title-fecha">
+        Fecha<img src="../sources/calendario_icono.png" alt="" />
+      </h2>
       <p>04 Octubre 2025</p>
     </section>
 
@@ -47,12 +102,14 @@
     <section class="ceremonia">
       <h2>Celebraremos nuestra Ceremonia</h2>
       <div class="ceremonia-container">
-        <img src="../sources/iglesia_icono.png" alt="">
+        <img src="../sources/iglesia_icono.png" alt="" />
         <div class="ceremonia-details">
-            <p>Parroquia Santa Cecilia</p>
-            <p>Diagonal 49 sur #53b-58</p>
-            <p>Hora: 6:30 pm</p>
-            <button class="button" >Ubicación<img src="../sources/ubicacion_icono.png" alt=""></button>
+          <p>Parroquia Santa Cecilia</p>
+          <p>Diagonal 49 sur #53b-58</p>
+          <p>Hora: 6:30 pm</p>
+          <button class="button" onclick="abrirPopup('ceremonia')">
+            Ubicación<img src="../sources/ubicacion_icono.png" alt="" />
+          </button>
         </div>
       </div>
     </section>
@@ -60,12 +117,14 @@
     <section class="celebremos">
       <h2>Celebraremos</h2>
       <div class="celebremos-container">
-        <img src="../sources/copas_iconos.png" alt="">
+        <img src="../sources/copas_iconos.png" alt="" />
         <div class="celebremos-details">
-            <p>Salon estilo y moda</p>
-            <p>Diagonal 48 #19-92</p>
-            <p>Hora: 8:00pm</p>
-            <button class="button">Ubicación<img src="../sources/ubicacion_icono.png" alt=""></button>
+          <p>Salon estilo y moda</p>
+          <p>Diagonal 48 #19-92</p>
+          <p>Hora: 8:00pm</p>
+          <button class="button" onclick="abrirPopup('celebracion')">
+            Ubicación<img src="../sources/ubicacion_icono.png" alt="" />
+          </button>
         </div>
       </div>
     </section>
