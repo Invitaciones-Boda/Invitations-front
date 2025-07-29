@@ -35,6 +35,103 @@ body, html{
   width: 100%;
   height: 100%;
   border: none;
-  z-index: 1;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  backface-visibility: hidden;
 }
 
+
+@keyframes flipPage {
+  0% {
+    transform: rotateY(0deg);
+    transform: translateX(-30%);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(360deg);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+#iframe.animate-flip {
+  animation: flipPage 0.6s linear;
+  transform-origin: center;
+}
+
+/* ... tu CSS existente ... */
+
+/* Animación para voltear la página hacia la izquierda (avanzar) */
+@keyframes pageTurnOutLeft {
+    0% {
+        transform: rotateY(0deg);
+        transform-origin: right center; /* La página se voltea desde el borde derecho */
+        z-index: 2;
+    }
+    100% {
+        transform: rotateY(-180deg); /* Gira 180 grados hacia la izquierda */
+        transform-origin: right center;
+        z-index: 2;
+    }
+}
+
+/* Animación para que la nueva página entre desde la derecha (avanzar) */
+@keyframes pageTurnInRight {
+    0% {
+        transform: rotateY(180deg); /* Empieza volteada */
+        transform-origin: right center;
+        z-index: 2;
+    }
+    100% {
+        transform: rotateY(0deg); /* Termina plana */
+        transform-origin: right center;
+        z-index: 2;
+    }
+}
+
+/* Animación para voltear la página hacia la derecha (retroceder) */
+@keyframes pageTurnOutRight {
+    0% {
+        transform: rotateY(0deg);
+        transform-origin: left center; /* La página se voltea desde el borde izquierdo */
+        z-index: 2;
+    }
+    100% {
+        transform: rotateY(180deg); /* Gira 180 grados hacia la derecha */
+        transform-origin: left center;
+        z-index: 2;
+    }
+}
+
+/* Animación para que la nueva página entre desde la izquierda (retroceder) */
+@keyframes pageTurnInLeft {
+    0% {
+        transform: rotateY(-180deg); /* Empieza volteada */
+        transform-origin: left center;
+        z-index: 2;
+    }
+    100% {
+        transform: rotateY(0deg); /* Termina plana */
+        transform-origin: left center;
+        z-index: 2;
+    }
+}
+
+
+/* Clases para aplicar las animaciones */
+#iframe.animate-out-left {
+    animation: pageTurnOutLeft 0.6s ease-in-out forwards;
+}
+
+#iframe.animate-in-right {
+    animation: pageTurnInRight 0.6s ease-in-out backwards;
+}
+
+#iframe.animate-out-right {
+    animation: pageTurnOutRight 0.6s ease-in-out forwards;
+}
+
+#iframe.animate-in-left {
+    animation: pageTurnInLeft 0.6s ease-in-out backwards;
+}
