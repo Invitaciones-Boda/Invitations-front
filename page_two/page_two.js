@@ -38,6 +38,35 @@ function abrirPopup(tipo) {
   }
 }
 
+const endDate = new Date('2025-10-04T18:00:00').getTime();
+// Selecciona todos los elementos con esa clase, en orden
+const countdownItems = document.querySelectorAll('.contdown-item-title');
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = endDate - now;
+
+  if (distance <= 0) {
+    countdownItems.forEach(item => item.innerText = '00');
+    clearInterval(interval);
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Asigna cada valor respetando el orden
+  countdownItems[0].innerText = days.toString().padStart(2, '0');
+  countdownItems[1].innerText = hours.toString().padStart(2, '0');
+  countdownItems[2].innerText = minutes.toString().padStart(2, '0');
+  countdownItems[3].innerText = seconds.toString().padStart(2, '0');
+}
+
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown();
+
 document.addEventListener("DOMContentLoaded", function () {
   let date = new Date();
   console.log(date)

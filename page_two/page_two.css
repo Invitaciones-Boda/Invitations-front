@@ -47,12 +47,20 @@ body, html{
   justify-content: center;
 }
 
+
 .countdown h2{
   width: 120px;
   padding: 5px;
   font-size: 30px;
   margin: 15px;
   border-bottom: 1px solid var(--gris-oscuro);
+}
+.countdown-item h3{
+  text-align:center;
+}
+.countdown-item p{
+  font-size: 18px;
+  text-align: center;
 }
 
 .countdown-container{
