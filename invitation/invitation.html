@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./invitation.css" />
-    <title>Invitado!</title>
-  </head>
-  <body id="container">
-    <script src="./invitation.js"></script>
-    <audio
-      src="/sources/Por el Resto de Mi Vida.mp3"
-      loop="false"
-      autoplay
-    ></audio>
-    <iframe id="iframe" src="" frameborder="0"></iframe>
-    <i class="fa-solid fa-chevron-left"></i>
-    <i class="fa-solid fa-chevron-right"></i>
-  </body>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-      rel="stylesheet"
-    />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./invitation.css" />
+  <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
+</head>
+
+<title>Invitado!</title>
+</head>
+
+<body id="container">
+  <i onclick="ingresar(-1)" class="fa-solid fa-chevron-left icon d1"></i>
+  <i onclick="ingresar(1)" class="fa-solid fa-chevron-right icon d2"></i>
+  <audio src="/sources/Por el Resto de Mi Vida.mp3" loop="false" autoplay></audio>
+  <iframe id="iframe" src="" frameborder="0"></iframe>
+</body>
+<script src="./invitation.js"></script>
+
 </html>
