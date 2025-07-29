@@ -121,17 +121,17 @@ body, html{
 
 /* Clases para aplicar las animaciones */
 #iframe.animate-out-left {
-    animation: pageTurnOutLeft 0.6s ease-in-out forwards;
+    animation: pageTurnOutLeft 1s ease-in-out forwards;
 }
 
 #iframe.animate-in-right {
-    animation: pageTurnInRight 0.6s ease-in-out backwards;
+    animation: pageTurnInRight 1s ease-in-out backwards;
 }
 
 #iframe.animate-out-right {
-    animation: pageTurnOutRight 0.6s ease-in-out forwards;
+    animation: pageTurnOutRight 1s ease-in-out forwards;
 }
 
 #iframe.animate-in-left {
-    animation: pageTurnInLeft 0.6s ease-in-out backwards;
+    animation: pageTurnInLeft 1s ease-in-out backwards;
 }
