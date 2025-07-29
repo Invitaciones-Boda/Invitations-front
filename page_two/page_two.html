@@ -11,11 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../utils.css" />
     <link rel="stylesheet" href="./page_two.css" />
   </head>
   <body>
     <div class="container-popup-ceremonia" id="container-popup-ceremonia">
+      <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('ceremonia')"></i>
       <div class="Popup-ceremonia" id="Popup-ceremonia">
         <div class="ubicacion">
           <iframe
@@ -34,14 +36,14 @@
 
         <button
           class="button-two"
-          onclick="window.open('https://www.google.com/maps?daddr=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia', '_blank')"
-        >
+          onclick="window.open('https://www.google.com/maps?daddr=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia', '_blank')">
           Iniciar recorrido
         </button>
       </div>
     </div>
 
     <div class="container-popup-celebracion" id="container-popup-celebracion">
+      <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('celebracion')"></i>
       <div class="Popup-celebracion" id="Popup-celebracion">
         <div class="ubicacion">
           <iframe

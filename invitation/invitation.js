@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
   swipeLayer.style.top = 0;
   swipeLayer.style.left = 0;
   swipeLayer.style.width = "100%";
-  swipeLayer.style.height = "80px"; // Solo en la parte superior
-  swipeLayer.style.zIndex = 1000;
+  swipeLayer.style.height = "100%"; // Solo en la parte superior
+  swipeLayer.style.zIndex = 2;
   swipeLayer.style.background = "transparent";
   swipeLayer.style.pointerEvents = "auto"; // Puede recibir eventos
   container.appendChild(swipeLayer);
