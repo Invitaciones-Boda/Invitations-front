@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Caveat', cursive;
+  color: var(--gris-oscuro);
   margin: 0;
   padding: 0;
 }
@@ -17,7 +18,9 @@ img{
 }
 
 h1{
-  font-size: 28px;
+  font-size: 36px;
+  margin-bottom: 30px;
+  /* font-weight: 700; */
 }
 
 .text-title{
@@ -28,7 +31,7 @@ h1{
   font-size: 22px;
 }
 
-@media screen and (min-height: 380px) and (min-width: 600px){
+/* @media screen and (min-height: 380px) and (min-width: 600px){
   img{
     width: 360px;
   }
@@ -45,4 +48,10 @@ h1{
     font-size: 22px;
   }
 
+} */
+
+@media (min-width: 376px) and (max-width: 767px) {
+ img{
+  width: 350px;
+}
 }

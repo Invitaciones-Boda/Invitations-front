@@ -7,7 +7,6 @@ body, html{
   height: 100%;
   overflow: hidden;
   z-index: 1;
-  background-image: url('/sources/fondo.jpg');
 }
 
 .icon {
@@ -28,6 +27,21 @@ body, html{
 .d2{
   right: 0;
   margin-right: 10px;
+}
+#iconoMusica{
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-rosa);
+  color: var(--gris-oscuro);
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-rosa);
+  border-radius: 50%;
 }
 
 #iframe {

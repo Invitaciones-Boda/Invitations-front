@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Caveat', cursive;
+  color: var(--gris-oscuro);
   margin: 0;
   padding: 0;
 }
@@ -12,6 +13,7 @@ body, html{
   flex-direction: column;
   text-align: center;
   justify-content: space-around;
+  align-items: center;
 }
 
 
@@ -27,15 +29,17 @@ body, html{
   font-size: 32px;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid var(--gris-oscuro);
+  align-items: center;  
 }
 
 .title-fecha img{
+  width: 30px;
+  height: 30px;
   margin: 10px;
 }
 
 .fecha p{
-  font-size: 28px;
+  font-size: 36px;
 }
 
 
@@ -52,16 +56,20 @@ body, html{
   width: 120px;
   padding: 5px;
   font-size: 30px;
-  margin: 15px;
-  border-bottom: 1px solid var(--gris-oscuro);
+  /* margin: 15px; */
+  
 }
-.countdown-item h3{
-  text-align:center;
+hr {
+  border: none;
+  border-top: 1px solid var(--gris-oscuro);
+  width: 70%;
+  margin: 10px auto;
 }
-.countdown-item p{
-  font-size: 18px;
-  text-align: center;
+.countdown-item{
+  display: flex;
+  flex-direction: column;
 }
+
 
 .countdown-container{
   margin: 0px 10px;
@@ -82,20 +90,30 @@ body, html{
   justify-content: center;
   border-radius: 8px;
 }
+.countdown-item h3{
+  text-align:center;
+}
+.countdown-item p{
+  font-size: 20px;
+  text-align: center;
+}
 
 /* CONTENEDOR NUESTA SEREMONIA */
 .ceremonia{
+  border: 2px solid var(--color-rosa);
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  margin: 6px;
 }
 
 .ceremonia h2{
   width: 60%;
   font-size: 28px;
   margin: 2px;
-  border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .ceremonia-container{
@@ -120,16 +138,19 @@ body, html{
 
 /* CONTENEDOR NUESTA CELEBREMOS */
 .celebremos{
+  border: 2px solid var(--color-rosa);
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  margin: 6px;
 }
 
 .celebremos h2{
   font-size: 28px;
   margin: 2px;
-  border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .celebremos-container{

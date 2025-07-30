@@ -77,6 +77,20 @@ function ingresar(direction) {
     });
 }
 
+
+
+function toggleMusica() {
+      let audio = document.getElementById('miAudio');
+
+      if (audio.paused) {
+        audio.play();
+        
+      } else {
+        audio.pause();
+       
+      }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     ingresar(); // Load the initial page
 });
