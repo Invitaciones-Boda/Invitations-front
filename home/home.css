@@ -113,7 +113,7 @@ html, body {
 
 
 .popup input{
-    max-width: 300px;
+    max-width: 260px;
     border-radius: 10px;
     border: 1px solid var(--gris-oscuro);
     padding: 0 10px;
