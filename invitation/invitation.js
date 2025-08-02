@@ -77,23 +77,25 @@ function ingresar(direction) {
     });
 }
 
+window.toggleMusica = function toggleMusica() {
+  const audio = document.getElementById('miAudio');
+  if (!audio) return;
 
+  if (audio.paused) {
+    audio.play().catch(e => console.log('Error al reproducir:', e));
+  } else {
+    audio.pause();
+  }
+};
 
-function toggleMusica() {
-      let audio = document.getElementById('miAudio');
-
-      if (audio.paused) {
-        audio.play();
-      } 
-
-      if (audio.play) {
-        audio.paused();
-      } 
-}
 
 document.addEventListener("DOMContentLoaded", () => {
-    ingresar(); // Load the initial page
-    const audio = document.getElementById('miAudio');
-    audio.muted = false; // Activa el sonido
+  ingresar(); // Load the initial page
+  const audio = document.getElementById('miAudio');
+  if (!audio) return;
+
+  audio.muted = false;
+  audio.addEventListener('canplaythrough', () => {
     audio.play().catch(e => console.log('No se pudo reproducir:', e));
+  });
 });
