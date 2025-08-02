@@ -8,7 +8,7 @@
 }
 
 html, body{
-    font-family: fantasy;
+    font-family: fantasy !important;
     box-sizing: border-box;
     padding: 0;
     height: 0;

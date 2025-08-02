@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../utils.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="../utils.css" />
     <title>Invitaciones Boda</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <section class="content-popup" id="popup-invitation">
-        <div class="popup"> 
-            <h1>Ingresa Tu Pin</h1>
-            <input type="text" id="code">
-            <button onclick="ingresarInvitaion()">Ver</button>
-        </div>
+      <div class="popup">
+        <h1>Ingresa Tu Pin</h1>
+        <input type="text" id="code" />
+        <button onclick="ingresarInvitaion()">Ver</button>
+      </div>
     </section>
 
-    <div class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
-        style="background-image: url('../sources/fondo.png');">
+    <div
+      class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
+      style="background-image: url('../sources/fondo.png')">
+      <div class="text-center">
+        <h1>Toca para abrir tu invitación</h1>
 
-        <div class="max-w-md mx-auto mt-5 p-0 bg-gray-100 rounded shadow target_invitation" id="target_invitation" onclick="openTargetInvitation()"> <!-- target_invitation_closed -->
-            <div class="triangle-invitation" id="triangle-invitation"></div> <!-- triangle-invitation-closed -->
+        <div
+          class="max-w-md mx-auto mt-5 p-0 bg-gray-100 rounded shadow target_invitation"
+          id="target_invitation"
+          onclick="openTargetInvitation()"
+        >
+          <!-- target_invitation_closed -->
+          <div class="triangle-invitation" id="triangle-invitation"></div>
+          <!-- triangle-invitation-closed -->
         </div>
+      </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="home.js"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="home.js"></script>
+  </body>
 </html>

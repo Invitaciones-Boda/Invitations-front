@@ -1,12 +1,14 @@
 *{
   box-sizing: border-box;
 }
+
 body, html{
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
   z-index: 1;
+  background-image: url('../sources/fondo.png');
 }
 
 .icon {

@@ -84,11 +84,11 @@ function toggleMusica() {
 
       if (audio.paused) {
         audio.play();
-        
-      } else {
-        audio.pause();
-       
-      }
+      } 
+
+      if (audio.play) {
+        audio.paused();
+      } 
 }
 
 document.addEventListener("DOMContentLoaded", () => {
