@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../utils.css" />
-    <link rel="stylesheet" href="./page_three.css" />
-    <title>Page three</title>
-  </head>
-  <body>
-    <div class="Popup"></div>
-    <section>
-      <img src="../sources/smoking 1.png" alt="" srcset="" />
-      <hr>
-      <h2>Vestimenta</h2>
-      <p>Utiliza tu mejor moda formal, Nos reservamos el color Blanco</p>
-    </section>
-    <section>
-      <img src="../sources/sobre-de-papel-blanco 1.png" alt="" srcset="" />
-      <hr>
-      <p>
-        Nuestro mejor regalo es tu compañia, pero si deseas tener un detalle con
-        nosotros, lluvia de sobres sera Bienvenida.
-      </p>
-    </section>
-    <section class="confirm">
-      <h2>!Confirma tu asistencia!</h2>
-      <p>
-        Recuerda confirmar tu asistencia antes del 19 de Septiembre para tenerte
-        en cuenta en el evento
-      </p>
-      <button>Confirmar Asistencia</button>
-    </section>
-    <script src="page_three.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../utils.css" />
+  <link rel="stylesheet" href="./page_three.css" />
+  <title>Page three</title>
+</head>
+
+<body>
+
+  <div class="container-popup" id="container-popup">
+    <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('ceremonia')"></i>
+    <form class="Popup" id="Popup">
+      <p class="text-confirmation">Confirma la asistencia de los invitados</p>
+      <div class="invitados">
+        <label for="">
+          <input type="checkbox" name="invitado1" id="invitado1" />
+          <span>Invitado 1</span>
+        </label>
+        <label for="">
+          <input type="checkbox" name="invitado2" id="invitado2" />
+          <span>Invitado 2</span>
+        </label>
+        <label for="">
+          <input type="checkbox" name="invitado3" id="invitado3" />
+          <span>Invitado 3</span>
+        </label>
+      </div>
+      <div>
+        <button class="button confirmation" onclick="confirmarAsistencia()">Confirmar</button>
+        <button class="button canceled">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <section>
+    <img src="../sources/smoking 1.png" alt="" srcset="" />
+    <hr>
+    <h2>Vestimenta</h2>
+    <p>Utiliza tu mejor moda formal, Nos reservamos el color Blanco</p>
+  </section>
+  <section>
+    <img src="../sources/sobre-de-papel-blanco 1.png" alt="" srcset="" />
+    <hr>
+    <p>
+      Nuestro mejor regalo es tu compañia, pero si deseas tener un detalle con
+      nosotros, lluvia de sobres sera Bienvenida.
+    </p>
+  </section>
+  <section class="confirm">
+    <h2>!Confirma tu asistencia!</h2>
+    <p>
+      Recuerda confirmar tu asistencia antes del 19 de Septiembre para tenerte
+      en cuenta en el evento
+    </p>
+    <button class="button-confirm" onclick="abrirPopupConfirmarAsistencia()">Confirmar Asistencia</button>
+  </section>
+  <script src="page_three.js"></script>
+</body>
+
 </html>
