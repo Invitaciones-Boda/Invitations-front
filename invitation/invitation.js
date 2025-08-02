@@ -93,4 +93,7 @@ function toggleMusica() {
 
 document.addEventListener("DOMContentLoaded", () => {
     ingresar(); // Load the initial page
+    const audio = document.getElementById('miAudio');
+    audio.muted = false; // Activa el sonido
+    audio.play().catch(e => console.log('No se pudo reproducir:', e));
 });
