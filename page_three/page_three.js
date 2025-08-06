@@ -1,5 +1,23 @@
 function abrirPopupConfirmarAsistencia(){
-    console.log('Abriendo popup de confirmación de asistencia');
+  try{
+    let  popupInvitado = document.getElementById("container-popup");
+
+    popupInvitado.style.display = "flex";
+  }
+  catch(error){
+    console.log('Error al abrir popup');
+  }
+}
+
+function cerrarPopupConfirmarAsistencia(){
+  try{
+    let  popupInvitado = document.getElementById("container-popup");
+
+    popupInvitado.style.display = "none";
+  }
+  catch(error){
+    console.log('Error al cerrar popup');
+  }
 }
 
 function confirmarAsistencia(){
@@ -23,6 +41,8 @@ function confirmarAsistencia(){
         }
 
         console.log('Confirmados: ', data);
+        alert("Confirmación exitosa");
+        cerrarPopupConfirmarAsistencia();
     }
     else {
         alert("No se ha confirmado la asistencia de ningún invitado.");

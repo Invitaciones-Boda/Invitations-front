@@ -21,26 +21,28 @@ hr {
 }
 
 .confirm{
-  background-image: url('../sources/fondo_confirm_asistence.png');
+  height: 200px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 8px;
 }
 
 .button-confirm {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-blanco);
+  background-color: var(--color-rosa);
   margin: 4px;
   padding: 4px 10px;
   border-radius: 8px;
   font-size: 20px;
   font-weight: 550;
   text-decoration: none;
-  border: none;
+  border: 1px solid var(--gris-oscuro)
 }
 
 
@@ -48,7 +50,7 @@ hr {
   position: fixed;
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -90,11 +92,15 @@ hr {
 .confirmation{
   background-color: #2b8618;
   color: white;
+  border: 1px solid #2b8618;
+  border-radius: 8px;
 }
 
 .canceled{
   background-color: #861818;
   color: white;
+  border: 1px solid #861818;
+  border-radius: 8px;
 }
 
 input[type="checkbox"] {
