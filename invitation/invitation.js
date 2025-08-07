@@ -26,7 +26,7 @@ function ingresar(direction) {
     next.style.display = "block";
 
     // Aplica animación de salida
-    const outClass = direction === 1 ? "animate-out-left" : "animate-out-right";
+    const outClass = direction === 1 ? "animate-out-right" : "animate-out-left";
     current.classList.remove("animate-out-left", "animate-out-right");
     current.classList.add(outClass);
 

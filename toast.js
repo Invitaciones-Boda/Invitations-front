@@ -38,7 +38,7 @@ export class Toast {
           success: '#4caf4fde',
           error: '#f44336be',
           info: '#2195f3a4',
-          warning: '#ff99009d'
+          warning: '#ff9900cc'
       }[type];
   }
 

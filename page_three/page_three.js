@@ -1,3 +1,6 @@
+import { customConfirm } from '../confirm.js'
+import { Toast } from '../toast.js';
+
 function confirmarAsistenciaInvitados(data) {
   $.ajax({
     url: "http://localhost:8000/invitation/confirmacion/",
@@ -17,7 +20,7 @@ function confirmarAsistenciaInvitados(data) {
 }
 
 
-function abrirPopupConfirmarAsistencia() {
+window.abrirPopupConfirmarAsistencia = function abrirPopupConfirmarAsistencia() {
   try {
     let popupInvitado = document.getElementById("container-popup");
 
@@ -27,7 +30,7 @@ function abrirPopupConfirmarAsistencia() {
   }
 }
 
-function cerrarPopupConfirmarAsistencia() {
+window.cerrarPopupConfirmarAsistencia = function cerrarPopupConfirmarAsistencia() {
   try {
     let popupInvitado = document.getElementById("container-popup");
 
@@ -37,7 +40,7 @@ function cerrarPopupConfirmarAsistencia() {
   }
 }
 
-function confirmarAsistencia(event) {
+window.confirmarAsistencia =  async function confirmarAsistencia(event) {
   event.preventDefault();
 
   let form = document.getElementById("Popup");
@@ -56,14 +59,14 @@ function confirmarAsistencia(event) {
   });
 
   if (confirmados.length > 0) {
-    let confirmacion = confirm(
-      `¿Confirmar asistencia para los siguientes invitados?\n${confirmados.join(
+    let confirmacion = await customConfirm(
+      `¿Confirmar asistencia para los siguientes invitados? \n ${confirmados.join(
         ", "
       )}`
     );
 
     if (!confirmacion) {
-      alert("Asistencia no confirmada.");
+      Toast.warning("Asistencia no confirmada.");
       return;
     }
 
@@ -82,7 +85,7 @@ function confirmarAsistencia(event) {
   }
 }
 
-function cerrarPopup(tipo) {
+window.cerrarPopup = function cerrarPopup(tipo) {
   let containerCeremonia = document.getElementById("container-popup-ceremonia");
   let containerCelebracion = document.getElementById(
     "container-popup-celebracion"
