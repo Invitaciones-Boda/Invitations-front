@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Caveat', cursive;
+  color: var(--gris-oscuro);
   font-size: 22px;
   margin: 0;
   padding: 0;
@@ -21,15 +22,32 @@ hr {
   margin: 10px auto;
 }
 
+.dresscode h2{
+  font-size: 34px;
+}
+.gifts h2{
+  font-size: 34px;
+}
 .confirm{
-  height: 200px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--gris-oscuro);
+  border: 2px solid var(--color-rosa);
   border-radius: 8px;
+  padding: 20px;
+  border-style: dashed;
+}
+
+.confirm h2{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.confirm p{
+  margin-bottom: 10px;
 }
 
 .button-confirm {
@@ -43,7 +61,8 @@ hr {
   font-size: 20px;
   font-weight: 550;
   text-decoration: none;
-  border: 1px solid var(--gris-oscuro)
+  border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -92,16 +111,16 @@ hr {
 }
 
 .confirmation{
-  background-color: #2a86188a;
+  background-color: var(--gris-oscuro);
   color: white;
-  border: 1px solid #2b8618;
+  border: none;
   border-radius: 8px;
 }
 
 .canceled{
-  background-color: #86181886;
+  background-color: var(--gris-claro);
   color: white;
-  border: 1px solid #861818;
+  border: 1px solid var(--gris-claro);
   border-radius: 8px;
 }
 

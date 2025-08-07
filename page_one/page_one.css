@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  font-family: 'Caveat', cursive;
+  font-family: 'Caveat';
   color: var(--gris-oscuro);
   margin: 0;
   padding: 0;
@@ -20,6 +20,8 @@ img{
 h1{
   font-size: 36px;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
   /* font-weight: 700; */
 }
 

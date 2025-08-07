@@ -172,6 +172,12 @@ hr {
   margin: 10px 20px;
 }
 
+.celebremos-container img{
+  width: 50px;
+  height: 50px;
+
+}
+
 .celebremos-details p{
   font-size: 20px;
   margin: 1px;
@@ -191,16 +197,16 @@ hr {
   font-weight: 700;
   text-decoration: none;
   border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.button img{
-  margin-left: 5px;
-}
+
 
 .button i{
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 14px;
   color: var(--gris-oscuro);
+  
 
 }
 
@@ -272,6 +278,12 @@ hr {
 .ubicacion iframe{
   border-radius: 8px;
 }
+
+.container-ubication{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .ubicacion-text{
   width: 240px;
   font-size: 24px;
@@ -279,7 +291,9 @@ hr {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  padding: 10px;
 }
+
 
 .button-two{
   display: flex;
@@ -293,6 +307,7 @@ hr {
   font-weight: 550;
   text-decoration: none;
   border: none;
+  
 }
 
 .iconos-equis{

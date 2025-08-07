@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  
 }
 
 body, html{
@@ -24,11 +25,13 @@ body, html{
 .d1 {
   left: 0;
   margin-left: 10px;
+  color: var(--gris-oscuro)
 }
 
 .d2{
   right: 0;
   margin-right: 10px;
+  color: var(--gris-oscuro)
 }
 #iconoMusica{
   background-color: var(--color-blanco);
@@ -48,7 +51,7 @@ body, html{
 
 #iframe {
   margin: 0;
-  padding: 20px;
+  padding: 10px 20px;
   width: 100%;
   height: 100%;
   border: none;
@@ -56,6 +59,7 @@ body, html{
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   backface-visibility: hidden;
+  
 }
 
 
