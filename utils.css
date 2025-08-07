@@ -5,6 +5,7 @@
     --color-beige-claro: #FAECDF;
     --color-blanco: #FFF9F5; 
     --color-rosa: #F2E1DA;
+    --color-dorado: linear-gradient(270deg, #E2C15C, #F3CA4B, #D8AD26);
 }
 
 body {
