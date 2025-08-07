@@ -1,3 +1,5 @@
+import { Toast } from '../toast.js'
+
 // FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
 async function ingresar(valor) {
   return new Promise(function (resolve, reject) {
@@ -17,10 +19,10 @@ async function ingresar(valor) {
 }
 
 // FUNCION PARA INGRESAR A LA INVITACION
-async function ingresarInvitaion() {
+window.ingresarInvitaion = async function ingresarInvitaion() {
   let valor = document.getElementById("code").value;
   if (!valor) {
-    alert("No se recibió un código de invitación");
+    Toast.error("No se recibió un código de invitación");
     return;
   }
 
@@ -54,7 +56,7 @@ async function ingresarInvitaion() {
 }
 
 // FUNCION PARA ABRIR LA TARJETA DE INVITACION
-window.openTargetInvitation = function () {
+window.openTargetInvitation = function openTargetInvitation () {
   // Tomar los elementos
   const targetEl = document.getElementById("target_invitation");
   const triangleEl = document.getElementById("triangle-invitation");

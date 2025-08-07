@@ -1,6 +1,5 @@
 *{
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
 }
 
 body, html{
@@ -10,6 +9,7 @@ body, html{
   overflow: hidden;
   z-index: 1;
   background-image: url('../sources/fondo.png');
+  animation: aparecerIzquierda 1s ease-out forwards, shift 8s infinite linear;
 }
 
 .icon {
@@ -49,7 +49,7 @@ body, html{
   border-radius: 50%;
 }
 
-#iframe {
+.iframe {
   margin: 0;
   padding: 10px 20px;
   width: 100%;
@@ -59,7 +59,6 @@ body, html{
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   backface-visibility: hidden;
-  
 }
 
 
@@ -76,7 +75,7 @@ body, html{
   }
 }
 
-#iframe.animate-flip {
+.iframe.animate-flip {
   animation: flipPage 0.6s linear;
   transform-origin: center;
 }
@@ -141,18 +140,18 @@ body, html{
 
 
 /* Clases para aplicar las animaciones */
-#iframe.animate-out-left {
+.iframe.animate-out-left {
     animation: pageTurnOutLeft 1s ease-in-out forwards;
 }
 
-#iframe.animate-in-right {
+.iframe.animate-in-right {
     animation: pageTurnInRight 1s ease-in-out backwards;
 }
 
-#iframe.animate-out-right {
+.iframe.animate-out-right {
     animation: pageTurnOutRight 1s ease-in-out forwards;
 }
 
-#iframe.animate-in-left {
+.iframe.animate-in-left {
     animation: pageTurnInLeft 1s ease-in-out backwards;
 }

@@ -23,7 +23,6 @@ function abrirPopup(tipo) {
 }
 
 function cerrarPopup(tipo) {
-
   let containerCeremonia = document.getElementById("container-popup-ceremonia");
   let containerCelebracion = document.getElementById(
     "container-popup-celebracion"

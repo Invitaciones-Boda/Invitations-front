@@ -15,6 +15,7 @@ html, body{
 
 img{
   width: 250px;
+  animation: aparecer 1s ease-out forwards, shift 8s infinite linear;
 }
 
 h1{
@@ -23,14 +24,17 @@ h1{
   display: flex;
   justify-content: center;
   /* font-weight: 700; */
+  animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
 }
 
 .text-title{
   font-size: 28px;
+  animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
 }
 
 .text-invitation{
   font-size: 22px;
+  animation: aparecerAbajo 1s ease-out forwards, shift 8s infinite linear;
 }
 
 /* @media screen and (min-height: 380px) and (min-width: 600px){

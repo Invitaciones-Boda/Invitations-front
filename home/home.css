@@ -31,6 +31,7 @@ html, body {
   height: 260px;
   border-radius: 10px;
   overflow: hidden;
+  animation: aparecerAbajo 1s ease-out forwards, shift 8s infinite linear;
 }
 
 .triangle-invitation {
@@ -93,6 +94,12 @@ html, body {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+h1{
+    color: var(--gris-oscuro);
+    margin-bottom: 15px;
+    animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
 }
 
 .popup{
