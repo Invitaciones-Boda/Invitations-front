@@ -1,58 +1,88 @@
-function abrirPopupConfirmarAsistencia(){
-  try{
-    let  popupInvitado = document.getElementById("container-popup");
+function confirmarAsistenciaInvitados(data) {
+  $.ajax({
+    url: "http://localhost:8000/invitation/confirmacion/",
+    type: "POST",
+    contentType: "application/json",  // IMPORTANTE
+    data: JSON.stringify(data),
+    success: function (response) {
+      localStorage.setItem("estadoConfirmacion", "confirmado");
+      alert("Confirmación exitosa");
+      cerrarPopupConfirmarAsistencia();
+      validarEstadoConfirmacion();
+    },
+    error: function (xhr, status, error) {
+      alert("Confirmación errónea, por favor comunícate con nosotros");
+    },
+  });
+}
+
+
+function abrirPopupConfirmarAsistencia() {
+  try {
+    let popupInvitado = document.getElementById("container-popup");
 
     popupInvitado.style.display = "flex";
-  }
-  catch(error){
-    console.log('Error al abrir popup');
+  } catch (error) {
+    console.log("Error al abrir popup");
   }
 }
 
-function cerrarPopupConfirmarAsistencia(){
-  try{
-    let  popupInvitado = document.getElementById("container-popup");
+function cerrarPopupConfirmarAsistencia() {
+  try {
+    let popupInvitado = document.getElementById("container-popup");
 
     popupInvitado.style.display = "none";
-  }
-  catch(error){
-    console.log('Error al cerrar popup');
+  } catch (error) {
+    console.log("Error al cerrar popup");
   }
 }
 
-function confirmarAsistencia(){
-    event.preventDefault();
-    let form = document.getElementById("Popup");
-    if (!form) {
-        alert("No se encontró el formulario de confirmación.");
-        return;
-    }
-    let invitados = form.querySelectorAll(".invitados input[type='checkbox']");
-    let confirmados = [];
-    invitados.forEach(invitado => {
-        if (invitado.checked) {
-            confirmados.push(invitado.name);
-        }
-    });
-    if (confirmados.length > 0) {
-        let data = {
-            codigo: "12345", // Reemplazar con el código real
-            invitados: confirmados
-        }
+function confirmarAsistencia(event) {
+  event.preventDefault();
 
-        console.log('Confirmados: ', data);
-        alert("Confirmación exitosa");
-        cerrarPopupConfirmarAsistencia();
+  let form = document.getElementById("Popup");
+  if (!form) {
+    alert("No se encontró el formulario de confirmación.");
+    return;
+  }
+
+  let invitados = form.querySelectorAll(".invitados input[type='checkbox']");
+  let confirmados = [];
+
+  invitados.forEach((invitado) => {
+    if (invitado.checked) {
+      confirmados.push(invitado.name);
     }
-    else {
-        alert("No se ha confirmado la asistencia de ningún invitado.");
+  });
+
+  if (confirmados.length > 0) {
+    let confirmacion = confirm(
+      `¿Confirmar asistencia para los siguientes invitados?\n${confirmados.join(
+        ", "
+      )}`
+    );
+
+    if (!confirmacion) {
+      alert("Asistencia no confirmada.");
+      return;
     }
-    
+
+    // Obtener datos desde localStorage
+    let codigo = localStorage.getItem("codigo");
+
+    let data = {
+      codigo: codigo || "sin-codigo",
+      invitados: confirmados,
+      confirmados: confirmados.length,
+    };
+
+    confirmarAsistenciaInvitados(data);
+  } else {
+    alert("No se ha confirmado la asistencia de ningún invitado.");
+  }
 }
-
 
 function cerrarPopup(tipo) {
-
   let containerCeremonia = document.getElementById("container-popup-ceremonia");
   let containerCelebracion = document.getElementById(
     "container-popup-celebracion"
@@ -75,4 +105,49 @@ function cerrarPopup(tipo) {
   }
 }
 
+function validarEstadoConfirmacion() {
 
+  let estadoConfirmacion = localStorage.getItem("estadoConfirmacion");
+  let contentConfirm = document.getElementById("content-confirm");
+
+  if (estadoConfirmacion === "confirmado") {
+    contentConfirm.innerHTML = `
+      <div>
+        <h2>¡Gracias por confirmar tu asistencia!</h2>
+        <p>Nos alegra mucho que puedas acompañarnos en este día tan especial.</p>
+      </div>
+    `;
+  }
+
+};
+
+function generarCheckboxInvitados() {
+  const invitadosDiv = document.querySelector(".invitados");
+  invitadosDiv.innerHTML = ""; // Limpiar contenido actual
+
+  let nombres = localStorage.getItem("Invitados");
+  if (!nombres) return;
+
+  nombres = nombres.split(",").map((nombre) => nombre.trim());
+
+  nombres.forEach((nombre, index) => {
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.name = nombre;
+    input.id = `invitado${index + 1}`;
+
+    const span = document.createElement("span");
+    span.textContent = nombre;
+
+    label.appendChild(input);
+    label.appendChild(span);
+    invitadosDiv.appendChild(label);
+  });
+
+  validarEstadoConfirmacion();
+}
+
+// Llama esta función cuando se abra el popup
+window.addEventListener("DOMContentLoaded", generarCheckboxInvitados);

@@ -6,6 +6,7 @@ async function ingresar(valor) {
       type: "POST",
       data: { codigo: valor },
       success: function (response) {
+        console.log('Response: ', response);
         resolve(response);
       },
       error: function (error) {
@@ -29,11 +30,20 @@ async function ingresarInvitaion() {
     if (valor === "ABC123") {
       state = true;
     } else {
-      state = await ingresar(valor);
+      state = await ingresar(valor );
     }
 
     if (state) {
+      let data = state.data;
+
+      // Guardar en el localStorage
+      localStorage.setItem("Invitados", data.Nombres);
+      localStorage.setItem("numeroInvitados", data.numeroInvitados);
+      localStorage.setItem("codigo", data.id);
+      localStorage.setItem("estadoConfirmacion", data.estadoConfirmacion);
+
       location.href = "/invitation/invitation.html";
+
     }
   } catch (error) {
     // Manejo seguro del mensaje de error

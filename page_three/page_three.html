@@ -12,54 +12,48 @@
 </head>
 
 <body>
-
-  <div class="container-popup" id="container-popup" >
+  <div class="container-popup" id="container-popup">
     <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('ceremonia')"></i>
     <form class="Popup" id="Popup">
       <p class="text-confirmation">Confirma la asistencia de los invitados</p>
-      <div class="invitados" >
-        <label for="">
-          <input type="checkbox" name="invitado1" id="invitado1" />
-          <span>Invitado 1</span>
-        </label>
-        <label for="">
-          <input type="checkbox" name="invitado2" id="invitado2" />
-          <span>Invitado 2</span>
-        </label>
-        <label for="">
-          <input type="checkbox" name="invitado3" id="invitado3" />
-          <span>Invitado 3</span>
-        </label>
-      </div>
+      <div class="invitados"></div>
       <div>
-        <button class="button confirmation" onclick="confirmarAsistencia()">Confirmar</button>
-        <button class="button canceled">Cancelar</button>
+        <button class="button confirmation" onclick="confirmarAsistencia(event)">
+          Confirmar
+        </button>
+        <button class="button canceled" type="button" onclick="cerrarPopupConfirmarAsistencia()">
+          Cancelar
+        </button>
       </div>
     </form>
   </div>
 
   <section>
     <img src="../sources/smoking 1.png" alt="" srcset="" />
-    <hr>
+    <hr />
     <h2>Vestimenta</h2>
     <p>Utiliza tu mejor moda formal, Nos reservamos el color Blanco</p>
   </section>
   <section>
     <img src="../sources/sobre-de-papel-blanco 1.png" alt="" srcset="" />
-    <hr>
+    <hr />
     <p>
       Nuestro mejor regalo es tu compañia, pero si deseas tener un detalle con
       nosotros, lluvia de sobres sera Bienvenida.
     </p>
   </section>
-  <section class="confirm">
+  <section class="confirm" id="content-confirm">
     <h2>!Confirma tu asistencia!</h2>
     <p>
       Recuerda confirmar tu asistencia antes del 19 de Septiembre para tenerte
       en cuenta en el evento
     </p>
-    <button class="button-confirm" onclick="abrirPopupConfirmarAsistencia()">Confirmar Asistencia</button>
+    <button class="button-confirm" onclick="abrirPopupConfirmarAsistencia()">
+      Confirmar Asistencia
+    </button>
   </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <script src="page_three.js"></script>
 </body>
 
