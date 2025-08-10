@@ -17,6 +17,7 @@ h1{
   margin: 10px 0;
   font-size: 30px;
   color: var(--gris-oscuro);
+  background-color: var(--);
 }
 
 section img{
