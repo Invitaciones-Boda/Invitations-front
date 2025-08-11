@@ -29,11 +29,7 @@ window.ingresarInvitaion = async function ingresarInvitaion() {
   try {
     let state = false;
 
-    if (valor === "ABC123") {
-      state = true;
-    } else {
-      state = await ingresar(valor );
-    }
+    state = await ingresar(valor );
 
     if (state) {
       let data = state.data;
@@ -50,7 +46,7 @@ window.ingresarInvitaion = async function ingresarInvitaion() {
   } catch (error) {
     // Manejo seguro del mensaje de error
     let mensaje =
-      error?.responseJSON.message || "Error al procesar la solicitud.";
+      error?.responseJSON || "Error al procesar la solicitud.";
     alert(mensaje);
   }
 }
