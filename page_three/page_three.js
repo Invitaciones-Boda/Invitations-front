@@ -3,7 +3,7 @@ import { Toast } from '../toast.js';
 
 function confirmarAsistenciaInvitados(data) {
   $.ajax({
-    url: "https://localhost:8000/invitation/confirmacion/",
+    url: "https://samlop-backend.online/invitation/confirmacion/",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(data),
