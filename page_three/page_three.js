@@ -3,9 +3,9 @@ import { Toast } from '../toast.js';
 
 function confirmarAsistenciaInvitados(data) {
   $.ajax({
-    url: "http://localhost:8000/invitation/confirmacion/",
+    url: "https://localhost:8000/invitation/confirmacion/",
     type: "POST",
-    contentType: "application/json",  // IMPORTANTE
+    contentType: "application/json",
     data: JSON.stringify(data),
     success: function (response) {
       localStorage.setItem("estadoConfirmacion", "confirmado");

@@ -4,7 +4,7 @@ import { Toast } from '../toast.js'
 async function ingresar(valor) {
   return new Promise(function (resolve, reject) {
     $.ajax({
-      url: "http://localhost:8000/invitation/ingreso/",
+      url: "https://localhost:8000/invitation/ingreso/",
       type: "POST",
       data: { codigo: valor },
       success: function (response) {
