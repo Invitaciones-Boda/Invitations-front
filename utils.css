@@ -8,8 +8,11 @@
     --color-dorado: linear-gradient(270deg, #E2C15C, #F3CA4B, #D8AD26);
 }
 
-body {
+*{
     font-family: 'Caveat', cursive !important;
+}
+
+body {
     height: 100%;
 }
 

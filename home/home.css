@@ -1,19 +1,20 @@
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 input {
   text-transform: uppercase;
 }
 
-html, body {
-  background-image: url('../sources/fondo 4.png');
+html,
+body {
+  background-image: url("../sources/fondo 4.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-size: 24px;
@@ -23,19 +24,16 @@ html, body {
   align-items: center;
 }
 
-
 /* Reemplazo de text-center */
 .text-center {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  justify-content: center;  
-  height: 100%; 
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   color: var(--gris-oscuro);
-
 }
-
 
 @keyframes abrirSobre {
   from {
@@ -53,12 +51,11 @@ html, body {
 }
 /* TITULO DE INVITACION */
 
-
 /* -------------------------------------- CLASE DE INVITACION CLOSE  --------------------------------- */
 .target_invitation {
   position: relative;
   background-color: #e7d6ce !important;
-  border: 1px solid #FFE9DF;
+  border: 1px solid #ffe9df;
   box-shadow: 2px 5px 10px 0px var(--gris-claro);
   width: 340px;
   height: 240px;
@@ -81,7 +78,7 @@ html, body {
 .triangle-invitation::after {
   content: "";
   position: absolute;
-  bottom: -18px; 
+  bottom: -18px;
   left: 50%;
   transform: translateX(-50%);
   width: 70px;
@@ -97,7 +94,7 @@ html, body {
   top: 60%;
   left: 16%;
   transform: translateX(-50%);
-  z-index: 8; 
+  z-index: 8;
   opacity: 0.5;
 }
 
@@ -125,7 +122,7 @@ html, body {
   border-right: 170px solid transparent;
   border-top: 270px solid var(--color-rosa);
   animation: abrirSobre 0.6s ease forwards;
-} 
+}
 
 .target_invitation_closed img {
   width: 24%;
@@ -134,13 +131,13 @@ html, body {
   top: 60%;
   left: 16%;
   transform: translateX(-50%);
-  z-index: 8; 
+  z-index: 8;
   opacity: 0.5;
 }
 
-.content{
+.content {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -152,59 +149,62 @@ html, body {
   gap: 10px;
 }
 
-
 /* -------------------------------------- CLASES DEL POPUP DE INVITACION  --------------------------------- */
 
-.content-popup{
-    background-color: rgba(240, 248, 255, 0.411);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+.content-popup {
+  background-color: rgba(240, 248, 255, 0.411);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-h1{
-    color: var(--gris-oscuro);
-    font-size: 34px !important;
-    animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
+h1 {
+  color: var(--gris-oscuro);
+  font-size: 34px !important;
+  animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
 }
 
-.popup{
-    background-color: var(--color-rosa);
-    color: var(--gris-oscuro);
-    height: 240px;
-    width: 325px;
-    border: 1px solid var(--gris-claro);
-    border-radius: 10px;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-evenly;
-    align-items: center;
-    box-shadow: 2px 5px 10px 0px var(--gris-claro);
-    animation: abrirPopup 0.6s linear;
+.popup {
+  background-color: var(--color-rosa);
+  color: var(--gris-oscuro);
+  height: 240px;
+  width: 325px;
+  border: 1px solid var(--gris-claro);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 2px 5px 10px 0px var(--gris-claro);
+  animation: abrirPopup 0.6s linear;
 }
 
-
-.popup input{
-    border-radius: 10px;
-    padding: 0 10px;
-    width: 80%;
-    height: 40px;
-    border: 1px solid var(--gris-claro);
-    outline: none;
+.popup input {
+  border-radius: 10px;
+  padding: 0 10px;
+  width: 80%;
+  height: 40px;
+  border: 1px solid var(--gris-claro);
+  outline: none;
 }
 
-.popup button{
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: var(--color-rosa);
-    box-shadow: 2px 5px 10px 0px var(--gris-claro);
-    border: 1px solid var(--color-beige);
+.popup button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gris-oscuro);
+  width: 120px;
+  height: 30px;
+  font-size: 24px;
+  border-radius: 10px;
+  background-color: var(--color-rosa);
+  box-shadow: 2px 5px 10px 0px var(--gris-claro);
+  border: 1px solid var(--color-beige);
 }
-
