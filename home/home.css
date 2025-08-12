@@ -130,6 +130,7 @@ html, body {
 
 h1{
     color: var(--gris-oscuro);
+    font-size: 34px !important;
     animation: aparecerArriba 1s ease-out forwards, shift 8s infinite linear;
 }
 
@@ -152,15 +153,17 @@ h1{
 
 
 .popup input{
-    max-width: 260px;
     border-radius: 10px;
-    border: 1px solid var(--gris-oscuro);
     padding: 0 10px;
+    width: 80%;
+    height: 40px;
+    border: 1px solid var(--gris-claro);
+    outline: none;
 }
 
 .popup button{
     width: 120px;
     border-radius: 10px;
-    border: 1px solid var(--gris-oscuro);
     background-color: var(--color-beige);
+    box-shadow: 2px 5px 10px 0px var(--gris-claro);
 }

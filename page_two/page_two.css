@@ -7,6 +7,7 @@
 }
 
 body, html{
+  padding: 10px 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -14,6 +15,7 @@ body, html{
   text-align: center;
   justify-content: space-around;
   align-items: center;
+  padding: 4%;
 }
 
 
@@ -206,8 +208,6 @@ hr {
   margin-left: 5px;
   font-size: 14px;
   color: var(--gris-oscuro);
-  
-
 }
 
 /* POPUP CEREMONIA */
@@ -228,8 +228,8 @@ hr {
 
 .Popup-ceremonia{
   position: fixed; /* Importante: para que la equis se ubique dentro */
-  width: 80%;
-  height: 62%;
+  width: 86%;
+  height: 64%;
   top: 20%;
   /* left: 10%;
   width: 80%;
@@ -240,6 +240,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .container-popup-celebracion{
@@ -255,15 +256,15 @@ hr {
 .Popup-celebracion{
   position: fixed; 
   top: 20%;
-  left: 10%;
-  width: 80%;
-  height: 62%;
+  width: 86%;
+  height: 64%;
   background-color: var(--color-rosa);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .ubicacion{
