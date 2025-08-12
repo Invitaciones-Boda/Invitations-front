@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../utils.css" />
+  <link rel="stylesheet" href="../utils.css" />
   <link rel="stylesheet" href="home.css" />
   <title>Invitaciones Boda</title>
 </head>
@@ -14,27 +14,23 @@
   <section class="content-popup" id="popup-invitation">
     <div class="popup">
       <h1>Ingresa Tu Pin</h1>
-      <input type="text" id="code" maxlength="8"  />
+      <input type="text" id="code" maxlength="8" />
       <button onclick="ingresarInvitaion()">Ver</button>
     </div>
   </section>
 
-  <div class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center content"
-    style="background-image: url('../sources/fondo\ 4.png')">
+  <div class="content-bg">
     <div class="text-center">
       <h1 style="margin: 10px 10px;">Toca para abrir tu invitación</h1>
 
       <div class="target_invitation" id="target_invitation" onclick="openTargetInvitation()">
-        <!-- target_invitation_closed -->
         <div class="triangle-invitation" id="triangle-invitation"></div>
-        <!-- triangle-invitation-closed -->
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script type="module" src="home.js"></script>
 </body>
 
