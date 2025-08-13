@@ -8,11 +8,25 @@ async function ingresar(valor) {
       type: "POST",
       data: { codigo: valor },
       success: function (response) {
-        console.log('Response: ', response);
+        console.log("Response: ", response);
         resolve(response);
       },
-      error: function (error) {
-        reject(error);
+      error: function (jqXHR) {
+        // Manejo seguro de errores de jQuery AJAX
+        let mensaje = "Error al procesar la solicitud.";
+        
+        if (jqXHR.responseJSON && jqXHR.responseJSON.message) {
+          mensaje = jqXHR.responseJSON.message;
+        } else if (jqXHR.responseText) {
+          try {
+            let json = JSON.parse(jqXHR.responseText);
+            mensaje = json.message || mensaje;
+          } catch {
+            mensaje = jqXHR.responseText;
+          }
+        }
+        
+        reject(new Error(mensaje));
       },
     });
   });
@@ -20,36 +34,33 @@ async function ingresar(valor) {
 
 // FUNCION PARA INGRESAR A LA INVITACION
 window.ingresarInvitaion = async function ingresarInvitaion() {
-  let valor = document.getElementById("code").value;
+  let valor = document.getElementById("code").value?.trim();
   if (!valor) {
-    Toast.error("No se recibió un código de invitación");
+    Toast.warning("No se recibió un código de invitación");
     return;
   }
 
   try {
-    let state = false;
+    let state = await ingresar(valor);
 
-    state = await ingresar(valor );
-
-    if (state) {
+    if (state && state.data) {
       let data = state.data;
 
       // Guardar en el localStorage
-      localStorage.setItem("Invitados", data.Nombres);
-      localStorage.setItem("numeroInvitados", data.numeroInvitados);
-      localStorage.setItem("codigo", data.id);
-      localStorage.setItem("estadoConfirmacion", data.estadoConfirmacion);
+      localStorage.setItem("Invitados", data.Nombres ?? "");
+      localStorage.setItem("numeroInvitados", data.numeroInvitados ?? "");
+      localStorage.setItem("codigo", data.id ?? "");
+      localStorage.setItem("estadoConfirmacion", data.estadoConfirmacion ?? "");
 
       location.href = "/invitation/invitation.html";
-
+    } else {
+      Toast.error("La respuesta del servidor no es válida.");
     }
   } catch (error) {
-    // Manejo seguro del mensaje de error
-    let mensaje =
-      error?.responseJSON || "Error al procesar la solicitud.";
-    alert(mensaje);
+    Toast.error(error.message || "Error desconocido al procesar la invitación.");
   }
-}
+};
+
 
 // FUNCION PARA ABRIR LA TARJETA DE INVITACION
 window.openTargetInvitation = function openTargetInvitation () {

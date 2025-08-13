@@ -31,8 +31,8 @@ export class Toast {
     static getIcon(type) {
         const icons = {
             success: '<i class="fas fa-check-circle"></i>',
-            error: '<i class="fa-solid fa-xmark gold-text"></i>',
-            warning: '<i class="fas fa-exclamation-triangle"></i>',
+            error: '<i class="fa-solid fa-xmark"></i>',
+            warning: '<i class="fas fa-exclamation-triangle gold-text"></i>',
             info: '<i class="fas fa-info-circle"></i>'
         };
         return icons[type] || '<i class="fas fa-info-circle"></i>';
