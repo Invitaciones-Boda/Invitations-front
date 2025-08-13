@@ -218,9 +218,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.01);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-  
+  background-color: rgba(0, 0, 0, 0.247);  
 }
 
 .Popup-ceremonia{
@@ -228,7 +226,8 @@ hr {
   width: 80%;
   height: 60%;
   top: 20%;
-  background-color: var(--color-rosa);
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-beige);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -245,6 +244,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.247);
 }
 
 .Popup-celebracion{
@@ -252,7 +252,8 @@ hr {
   width: 80%;
   height: 60%;
   top: 20%;
-  background-color: var(--color-rosa);
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-beige);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -269,6 +270,7 @@ hr {
   background-position: center;
   border-radius: 8px;
   margin: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .ubicacion iframe{
@@ -295,7 +297,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-blanco);
+  background-color: var(--color-rosa);
   margin: 4px;
   padding: 4px 10px;
   border-radius: 8px;
@@ -303,7 +305,7 @@ hr {
   font-weight: 550;
   text-decoration: none;
   border: none;
-  
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .iconos-equis{
