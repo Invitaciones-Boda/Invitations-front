@@ -34,7 +34,7 @@ h1 {
 }
 
 .text-invitation {
-  padding: 20px;
+  padding: 0 20px;
   border-radius: 10px;
   color: var(--gris-oscuro);
   font-size: 18px;

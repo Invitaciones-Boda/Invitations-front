@@ -9,16 +9,17 @@ function confirmarAsistenciaInvitados(data) {
     data: JSON.stringify(data),
     success: function (response) {
       localStorage.setItem("estadoConfirmacion", "confirmado");
-      alert("Confirmación exitosa");
+      Toast.success("Confirmación exitosa");
       cerrarPopupConfirmarAsistencia();
       validarEstadoConfirmacion();
+      form.style.display = '';
     },
     error: function (xhr, status, error) {
-      alert("Confirmación errónea, por favor comunícate con nosotros");
+      Toast.error("Confirmación errónea, por favor comunícate con nosotros");
+      form.style.display = '';
     },
   });
 }
-
 
 window.abrirPopupConfirmarAsistencia = function abrirPopupConfirmarAsistencia() {
   try {
@@ -59,6 +60,7 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
   });
 
   if (confirmados.length > 0) {
+    form.style.display = 'none';
     let confirmacion = await customConfirm(
       `¿Confirmar asistencia para los siguientes invitados? \n ${confirmados.join(
         ", "
@@ -67,6 +69,7 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
 
     if (!confirmacion) {
       Toast.warning("Asistencia no confirmada.");
+      form.style.display = '';
       return;
     }
 
@@ -82,6 +85,7 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
     confirmarAsistenciaInvitados(data);
   } else {
     alert("No se ha confirmado la asistencia de ningún invitado.");
+    form.style.display = '';
   }
 }
 
