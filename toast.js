@@ -9,8 +9,8 @@ export class Toast {
 
         toast.innerHTML = `
             <div class="toast-icon">${this.getIcon(type)}</div>
-            <div class="toast-content">
-                <strong>${title}</strong>
+            <div class="toast-content" style="display: flex; flex-direction: column; gap: 5px; align-items: center; justify-content: center;">
+                <p style=" font-size: 24px; color: #675F5C;" >${title}</p>
             </div>
             <button class="toast-close"></button>
             <div class="toast-bar"></div>
