@@ -265,7 +265,7 @@ hr {
 .ubicacion{
   width: 84%;
   height: 40%;
-  background-color: antiquewhite;
+  background-color: var(--color-rosa);
   background-size: cover;
   background-position: center;
   border-radius: 8px;

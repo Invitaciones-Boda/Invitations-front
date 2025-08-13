@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Caveat', cursive;
   color: var(--gris-oscuro);
@@ -7,7 +7,8 @@
   padding: 0;
 }
 
-body, html{
+body,
+html {
   height: 100%;
   width: 100%;
   display: flex;
@@ -16,6 +17,7 @@ body, html{
   justify-content: space-around;
   padding: 4%;
 }
+
 hr {
   border: none;
   border-top: 1px solid var(--gris-oscuro);
@@ -23,13 +25,15 @@ hr {
   margin: 10px auto;
 }
 
-.dresscode h2{
+.dresscode h2 {
   font-size: 34px;
 }
-.gifts h2{
+
+.gifts h2 {
   font-size: 34px;
 }
-.confirm{
+
+.confirm {
   height: 220px;
   display: flex;
   flex-direction: column;
@@ -42,12 +46,12 @@ hr {
   border-style: dashed;
 }
 
-.confirm h2{
+.confirm h2 {
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.confirm p{
+.confirm p {
   margin-bottom: 10px;
 }
 
@@ -67,7 +71,7 @@ hr {
 }
 
 
-.container-popup{
+.container-popup {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -78,18 +82,20 @@ hr {
   align-items: center;
   justify-content: center;
   background-color: rgba(231, 231, 231, 0.712);
+  background-color: rgba(0, 0, 0, 0.247);
 }
 
-.Popup{
+.Popup {
   top: 20%;
-  width: 74%;
-  height: 60%;
-  background-color: var(--color-rosa);
+  width: 72%;
+  height: 50%;
+  background-color: var(--color-blanco);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 4%;
 }
 
 .text-confirmation {
@@ -97,7 +103,7 @@ hr {
   font-weight: 550;
 }
 
-.invitados{
+.invitados {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -105,29 +111,71 @@ hr {
   justify-content: center;
   font-size: 30px;
   padding: 0 20px;
-} 
+}
 
-.button{
+.button {
   width: 120px;
   font-size: 26px;
 }
 
-.confirmation{
-  background-color: var(--gris-oscuro);
+.confirmation {
+  background-color: var(--color-rosa);
   color: white;
   border: none;
   border-radius: 8px;
+  color: var(--gris-oscuro);
 }
 
-.canceled{
-  background-color: var(--gris-claro);
+.canceled {
+  background-color: var(--color-blanco);
   color: white;
-  border: 1px solid var(--gris-claro);
+  border: 1px solid var(--color-rosa);
   border-radius: 8px;
+  color: var(--gris-oscuro);
 }
 
+.invitados label{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+label input{
+  margin: 10px !important;
+}
+
+/* --------------------------------- */
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  appearance: none;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border: 2px solid #999;
+  border-radius: 10%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  margin: 2px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--gris-oscuro);
+  border-color: var(--gris-oscuro);
+  box-shadow: 0 0 5px var(--gris-claro);
+  content: "✓";
+  color: white;
+}
+
+input[type="checkbox"]::before {
+
+  position: absolute;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  content: "✓";
 }
