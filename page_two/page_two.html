@@ -1,252 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../utils.css" />
-    <link rel="stylesheet" href="./page_two.css" />
-  </head>
-  <body>
-    <div style="display: flex; flex-direction: row; gap: 20px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
-    </div>
-    <div class="container-popup-ceremonia" id="container-popup-ceremonia">
-      <div class="Popup-ceremonia" id="Popup-ceremonia">
-        <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('ceremonia')"></i>
-        <div class="ubicacion">
-          <iframe
-            src="https://www.google.com/maps?q=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia&output=embed"
-            width="100%"
-            height="100%"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="container-ubication">
-          <p class="ubicacion-text">
-            Parroquia Santa Cecilia Barrio Venecia Dg 49 sur #53b-58
-          </p>
 
-          <button
-            class="button-two"
-            onclick="window.open('https://www.google.com/maps?daddr=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia', '_blank')">
-            Iniciar recorrido
-          </button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/c628e42b8b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../utils.css" />
+  <link rel="stylesheet" href="./page_two.css" />
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: row; gap: 20px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+  </div>
+
+  <div class="container-popup-ceremonia" id="container-popup-ceremonia">
+    <div class="Popup-ceremonia" id="Popup-ceremonia">
+      <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('ceremonia')"></i>
+      <div class="ubicacion">
+        <iframe
+          src="https://www.google.com/maps?q=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia&output=embed"
+          width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-    </div>
-
-    <div class="container-popup-celebracion" id="container-popup-celebracion">
-      <div class="Popup-celebracion" id="Popup-celebracion">
-        <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('celebracion')"></i>
-        <div class="ubicacion">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus"
-            width="100%"
-            height="100%"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div></div>
+      <div class="container-ubication">
         <p class="ubicacion-text">
-          Estilo y moda casa de eventos Barrio Venecia Dg 48 #19-92 Tunjuelito
+          Parroquia Santa Cecilia Barrio Venecia Dg 49 sur #53b-58
         </p>
 
-        <button
-          class="button-two"
-          onclick="window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus', '_blank')"
-        >
+        <button class="button-two"
+          onclick="window.open('https://www.google.com/maps?daddr=Parroquia+Santa+Cecilia,+Dg+49+sur+%2353b-58,+Bogotá,+Colombia', '_blank')">
           Iniciar recorrido
         </button>
       </div>
     </div>
+  </div>
 
-    <section class="fecha">
-      <h2 class="title-fecha">
-        Fecha<img src="../sources/calendario.png" alt="" />
-      </h2>
-      <hr>
-      <p>04 Octubre 2025</p>
-    </section>
-
-    <section class="countdown">
-      <h2>¡Faltan!</h2>
-      <hr>
-      <div class="countdown-container">
-        <div class="countdown-item">
-          <h3 class="contdown-item-title"></h3>
-          <p>Dias</p>
-        </div>
-        <div class="countdown-item">
-          <h3 class="contdown-item-title"></h3>
-          <p>Horas</p>
-        </div>
-        <div class="countdown-item">
-          <h3 class="contdown-item-title"></h3>
-          <p>Minutos</p>
-        </div>
-        <div class="countdown-item">
-          <h3 class="contdown-item-title"></h3>
-          <p>Segundos</p>
-        </div>
+  <div class="container-popup-celebracion" id="container-popup-celebracion">
+    <div class="Popup-celebracion" id="Popup-celebracion">
+      <i class="fa-solid fa-xmark iconos-equis" onclick="cerrarPopup('celebracion')"></i>
+      <div class="ubicacion">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus"
+          width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-    </section>
+      <div></div>
+      <p class="ubicacion-text">
+        Estilo y moda casa de eventos Barrio Venecia Dg 48 #19-92 Tunjuelito
+      </p>
 
-    <section class="ceremonia">
-      <h2>Ceremonia</h2>
-      <hr>
-      <div class="ceremonia-container">
-        <img src="../sources/iglesia.png" alt="" />
-        <div class="ceremonia-details">
-          <p>Parroquia Santa Cecilia</p>
-          <p>Diagonal 49 sur #53b-58</p>
-          <p>Hora: 6:30 pm</p>
-          <button class="button" onclick="abrirPopup('ceremonia')">
-            Ubicación<i class="fa-solid fa-location-dot"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="celebremos">
-      <h2>Celebraremos</h2>
-      <hr>
-      <div class="celebremos-container">
-        <img src="../sources/copa-de-champan.png" alt="" />
-        <div class="celebremos-details">
-          <p>Salon estilo y moda</p>
-          <p>Diagonal 48 #19-92</p>
-          <p>Hora: 8:00pm</p>
-          <button class="button" onclick="abrirPopup('celebracion')">
-            Ubicación<i class="fa-solid fa-location-dot"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-    <div style="display: flex; flex-direction: row; gap: 20px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="" height="6" viewBox="0 0 206 6" fill=""
-            data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
-            class="injectable adorno-borde">
-            <g clip-path="url(#clip0_301_899)">
-                <path
-                    d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
-                </path>
-                <path
-                    d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
-                </path>
-                <path
-                    d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
-                </path>
-                <path
-                    d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
-                </path>
-            </g>
-        </svg>
+      <button class="button-two"
+        onclick="window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d994.2524109329722!2d-74.1404286772013!3d4.592291580688213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ed972f4b1d9%3A0x3ad847c293ca05f5!2sEstilo%20Y%20Moda%20-%20Casa%20de%20Eventos!5e0!3m2!1ses-419!2sus!4v1753406557435!5m2!1ses-419!2sus', '_blank')">
+        Iniciar recorrido
+      </button>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="page_two.js"></script>
-  </body>
+  </div>
+
+  <section class="fecha">
+    <h2 class="title-fecha">
+      Fecha<img src="../sources/calendario.png" alt="" />
+    </h2>
+    <hr>
+    <p>04 Octubre 2025</p>
+  </section>
+
+  <section class="countdown">
+    <h2>¡Faltan!</h2>
+    <hr>
+    <div class="countdown-container">
+      <div class="countdown-item">
+        <h3 class="contdown-item-title"></h3>
+        <p>Dias</p>
+      </div>
+      <div class="countdown-item">
+        <h3 class="contdown-item-title"></h3>
+        <p>Horas</p>
+      </div>
+      <div class="countdown-item">
+        <h3 class="contdown-item-title"></h3>
+        <p>Minutos</p>
+      </div>
+      <div class="countdown-item">
+        <h3 class="contdown-item-title"></h3>
+        <p>Segundos</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ceremonia">
+    <h2>Ceremonia</h2>
+    <hr>
+    <div class="ceremonia-container">
+      <img src="../sources/iglesia.png" alt="" />
+      <div class="ceremonia-details">
+        <p>Parroquia Santa Cecilia</p>
+        <p>Diagonal 49 sur #53b-58</p>
+        <p>Hora: 6:30 pm</p>
+        <button class="button" onclick="abrirPopup('ceremonia')">
+          Ubicación<i class="fa-solid fa-location-dot"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="celebremos">
+    <h2>Celebraremos</h2>
+    <hr>
+    <div class="celebremos-container">
+      <img src="../sources/copa-de-champan.png" alt="" />
+      <div class="celebremos-details">
+        <p>Salon estilo y moda</p>
+        <p>Diagonal 48 #19-92</p>
+        <p>Hora: 8:00pm</p>
+        <button class="button" onclick="abrirPopup('celebracion')">
+          Ubicación<i class="fa-solid fa-location-dot"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <div style="display: flex; flex-direction: row; gap: 20px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;" viewBox="0 0 206 6" fill="currentColor"
+      data-inject-url="https://www.fixdate.io/modelo-invitacion/125/img/adorno_divisor.svg"
+      class="injectable adorno-borde" preserveAspectRatio="xMidYMid meet">
+      <g clip-path="url(#clip0_301_899)">
+        <path
+          d="M0.09 3.04997C58.75 4.19997 117.68 4.43997 176.34 3.37997C176.89 3.37997 176.89 2.52997 176.34 2.51997C117.68 1.46997 58.75 1.69997 0.09 2.85997C-0.03 2.85997 -0.03 3.04997 0.09 3.04997Z">
+        </path>
+        <path
+          d="M198.47 2.96C198.47 1.36 197.11 0 195.51 0C193.91 0 192.55 1.35 192.55 2.96C192.55 4.57 193.91 5.92 195.51 5.92C197.11 5.92 198.47 4.57 198.47 2.96Z">
+        </path>
+        <path
+          d="M189.48 2.51999C189.48 2.51999 186.2 0.519992 186.2 2.51999C186.2 5.51999 189.48 5.51999 189.48 2.51999Z">
+        </path>
+        <path
+          d="M205.76 2.51999C205.76 2.51999 202.48 0.519992 202.48 2.51999C202.48 5.51999 205.76 5.51999 205.76 2.51999Z">
+        </path>
+      </g>
+    </svg>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="page_two.js"></script>
+</body>
+
 </html>
