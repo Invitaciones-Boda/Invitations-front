@@ -12,7 +12,7 @@ export class Toast {
             <div class="toast-content">
                 <strong>${title}</strong>
             </div>
-            <button class="toast-close">&times;</button>
+            <button class="toast-close"></button>
             <div class="toast-bar"></div>
         `;
 
@@ -30,13 +30,14 @@ export class Toast {
 
     static getIcon(type) {
         const icons = {
-            success: "✔️",
-            error: "❌",
-            warning: "⚠️",
-            info: "ℹ️"
+            success: '<i class="fas fa-check-circle"></i>',
+            error: '<i class="fa-solid fa-xmark gold-text"></i>',
+            warning: '<i class="fas fa-exclamation-triangle"></i>',
+            info: '<i class="fas fa-info-circle"></i>'
         };
-        return icons[type] || "ℹ️";
+        return icons[type] || '<i class="fas fa-info-circle"></i>';
     }
+
 
     static success(title, message, options, callback) { this.show(title, message, 'success', options, callback); }
     static error(title, message, options, callback) { this.show(title, message, 'error', options, callback); }
