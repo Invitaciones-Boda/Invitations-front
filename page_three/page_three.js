@@ -41,7 +41,7 @@ window.cerrarPopupConfirmarAsistencia = function cerrarPopupConfirmarAsistencia(
   }
 }
 
-window.confirmarAsistencia =  async function confirmarAsistencia(event) {
+window.confirmarAsistencia = async function confirmarAsistencia(event) {
   event.preventDefault();
 
   let form = document.getElementById("Popup");
@@ -113,7 +113,6 @@ window.cerrarPopup = function cerrarPopup(tipo) {
 }
 
 function validarEstadoConfirmacion() {
-
   let estadoConfirmacion = localStorage.getItem("estadoConfirmacion");
   let contentConfirm = document.getElementById("content-confirm");
 
@@ -127,77 +126,7 @@ function validarEstadoConfirmacion() {
   }
 
 };
-document.addEventListener("DOMContentLoaded", () => {
-  const iconos = [
-    {
-      id: "icono1",
-      path: "../sources/correo.json",
-      attr: "stroke",
-      color: "#cfc3bd",
-      type: "svg"
-    },
-    {
-      id: "icono-correo",
-      path: "../sources/correo.json",
-      newColor: [0.8117647, 0.76470588, 0.72941176, 1], // #cfc3bd
-      targetColors: [
-        [0, 0, 0, 1] // todos los negros
-      ],
-      type: "json"
-    }
-  ];
 
-  function replaceColors(obj, targetColors, newColor) {
-    if (Array.isArray(obj)) {
-      if (
-        obj.length === 4 &&
-        targetColors.some(c => c.every((v, i) => v === obj[i]))
-      ) {
-        for (let i = 0; i < 4; i++) {
-          obj[i] = newColor[i];
-        }
-      } else {
-        obj.forEach(item => replaceColors(item, targetColors, newColor));
-      }
-    } else if (typeof obj === "object" && obj !== null) {
-      Object.values(obj).forEach(value => replaceColors(value, targetColors, newColor));
-    }
-  }
-
-  iconos.forEach(icono => {
-    if (icono.type === "svg") {
-      const anim = lottie.loadAnimation({
-        container: document.getElementById(icono.id),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: icono.path
-      });
-      anim.addEventListener("DOMLoaded", () => {
-        document.querySelectorAll(`#${icono.id} svg path`).forEach(path => {
-          path.setAttribute(icono.attr, icono.color);
-        });
-      });
-    } else if (icono.type === "json") {
-      fetch(icono.path)
-        .then(res => res.json())
-        .then(data => {
-          // Cambiar colores
-          replaceColors(data, icono.targetColors, icono.newColor);
-          
-          // Cargar animación
-          lottie.loadAnimation({
-            container: document.getElementById(icono.id),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data
-          });
-        })
-        .catch(err => console.error("Error cargando", icono.path, err));
-    }
-  });
-});
 function generarCheckboxInvitados() {
   const invitadosDiv = document.querySelector(".invitados");
   invitadosDiv.innerHTML = ""; // Limpiar contenido actual
@@ -228,3 +157,103 @@ function generarCheckboxInvitados() {
 
 // Llama esta función cuando se abra el popup
 window.addEventListener("DOMContentLoaded", generarCheckboxInvitados);
+
+const colorNegroBase_corbata = [0, 0, 0, 1];
+const colorNegroNuevo_corbata = [0.811, 0.765, 0.741, 1]; // #cfc3bd
+
+const colorCianBase1_corbata = [0.2, 0.8, 0.8, 1];
+const colorCianBase2_corbata = [0.20000000298, 0.800000011921, 0.800000011921, 1];
+const colorCianNuevo_corbata = [0.901960784, 0.835294118, 0.807843137, 1]; // #E6D5CE
+
+function compararColores_corbata(c1, c2, tolerancia = 0.0001) {
+  return c1.length === c2.length && c1.every((v, i) => Math.abs(v - c2[i]) < tolerancia);
+}
+
+fetch('../sources/corbata.json')
+  .then(res => res.json())
+  .then(data => {
+    function reemplazarColores_corbata(obj) {
+      if (Array.isArray(obj)) {
+        obj.forEach(reemplazarColores_corbata);
+      } else if (typeof obj === 'object' && obj !== null) {
+        for (let key in obj) {
+          if (key === 'k' && Array.isArray(obj[key]) && obj[key].length === 4) {
+            if (compararColores_corbata(obj[key], colorNegroBase_corbata)) {
+              obj[key] = colorNegroNuevo_corbata;
+            }
+            else if (
+              compararColores_corbata(obj[key], colorCianBase1_corbata) || 
+              compararColores_corbata(obj[key], colorCianBase2_corbata)
+            ) {
+              obj[key] = colorCianNuevo_corbata;
+            }
+          } else {
+            reemplazarColores_corbata(obj[key]);
+          }
+        }
+      }
+    }
+
+    reemplazarColores_corbata(data);
+
+    lottie.loadAnimation({
+      container: document.getElementById('tie-icon'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: data
+    });
+  });
+
+/// FUNCIONALIDAD DE ICONOS EN MOVIMIENTO 
+const negroOriginal = [0, 0, 0, 1];
+const nuevoNegro = [0.811, 0.765, 0.741, 1]; // #cfc3bd
+
+const cyanOriginal = [0.2, 0.8, 0.8, 1]; // cian original
+const nuevoCyan = [0.901960784, 0.835294118, 0.807843137, 1]; // #E6D5CE
+
+function sameColor(c1, c2, tolerance = 0.0001) {
+  return c1.length === c2.length && c1.every((v, i) => Math.abs(v - c2[i]) < tolerance);
+}
+
+fetch('../sources/correo-electronico.json')
+  .then(res => res.json())
+  .then(data => {
+    function changeColors(obj) {
+      if (Array.isArray(obj)) {
+        obj.forEach(changeColors);
+      } else if (typeof obj === 'object' && obj !== null) {
+        for (let key in obj) {
+          if (key === 'k' && Array.isArray(obj[key]) && obj[key].length === 4) {
+            // Negro → nuevoNegro
+            if (sameColor(obj[key], negroOriginal)) {
+              obj[key] = nuevoNegro;
+            }
+            // Cian → nuevoCyan
+            else if (sameColor(obj[key], cyanOriginal)) {
+              obj[key] = nuevoCyan;
+            }
+          } else {
+            changeColors(obj[key]);
+          }
+        }
+      }
+    }
+
+    changeColors(data);
+
+    lottie.loadAnimation({
+      container: document.getElementById('mail-icon'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: data
+    });
+  });
+  
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  generarCheckboxInvitados
+});

@@ -25,6 +25,18 @@ hr {
   margin: 10px auto;
 }
 
+#tie-icon {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;          /* Centra horizontalmente */
+  display: block;          /* Necesario para que el margin auto funcione en horizontal */
+}
+#mail-icon {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;          /* Centra horizontalmente */
+  display: block;          /* Necesario para que el margin auto funcione en horizontal */
+}
 .dresscode h2 {
   font-size: 34px;
 }
