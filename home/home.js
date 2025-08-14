@@ -6,7 +6,8 @@ async function ingresar(valor) {
     $.ajax({
       url: "https://samlop-backend.online/invitation/ingreso/",
       type: "POST",
-      data: { codigo: valor },
+      contentType: "application/json",
+      data: JSON.stringify({ codigo: valor }),
       success: function (response) {
         console.log("Response: ", response);
         resolve(response);
