@@ -131,7 +131,7 @@ hr {
   color: white;
   border: 2px solid var(--color-rosa);
   border-radius: 8px;
-  color: var(--gris-oscuro);
+  color: var(--gris-oscuro) !important;
 }
 
 .invitados label{
