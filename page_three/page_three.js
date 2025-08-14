@@ -46,7 +46,7 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
 
   let form = document.getElementById("Popup");
   if (!form) {
-    alert("No se encontró el formulario de confirmación.");
+    Toast.error("No se encontró el formulario de confirmación.");
     return;
   }
 
@@ -62,9 +62,9 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
   if (confirmados.length > 0) {
     form.style.display = 'none';
     let confirmacion = await customConfirm(
-      `¿Confirmar asistencia para los siguientes invitados? \n ${confirmados.join(
+      `¿Confirmar asistencia para los siguientes invitados? \n <strong>${confirmados.join(
         ", "
-      )}`
+      )}</strong>`
     );
 
     if (!confirmacion) {
@@ -84,7 +84,7 @@ window.confirmarAsistencia =  async function confirmarAsistencia(event) {
 
     confirmarAsistenciaInvitados(data);
   } else {
-    alert("No se ha confirmado la asistencia de ningún invitado.");
+    Toast.warning("No se ha confirmado la asistencia de ningún invitado.");
     form.style.display = '';
   }
 }
