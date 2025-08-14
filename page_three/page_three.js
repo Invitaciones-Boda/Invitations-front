@@ -5,8 +5,7 @@ function confirmarAsistenciaInvitados(data) {
   $.ajax({
     url: "https://samlop-backend.online/invitation/confirmacion/",
     type: "POST",
-    contentType: "application/json",
-    data: JSON.stringify(data),
+    data: { codigo: valor }, 
     success: function (response) {
       localStorage.setItem("estadoConfirmacion", "confirmado");
       Toast.success("Confirmación exitosa");
