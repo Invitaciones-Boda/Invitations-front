@@ -16,7 +16,8 @@ function confirmarAsistenciaInvitados(data) {
       validarEstadoConfirmacion();
       form.style.display = '';
     },
-    error: function (xhr, status, error) {
+    error: function (error) {
+      console.log('Error al confirmar la invitación: ', error);
       Toast.error("Confirmación errónea, por favor comunícate con nosotros");
       form.style.display = '';
     },
