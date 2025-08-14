@@ -34,12 +34,12 @@ async function ingresar(valor) {
 
 // FUNCION PARA INGRESAR A LA INVITACION
 window.ingresarInvitaion = async function ingresarInvitaion() {
-  let valor = document.getElementById("code").value?.trim();
+  let valor = document.getElementById("code").value?.trim().toUpperCase();
   if (!valor) {
     Toast.warning("No se recibió un código de invitación");
     return;
   }
-
+  
   try {
     let state = await ingresar(valor);
 

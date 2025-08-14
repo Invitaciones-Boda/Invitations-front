@@ -1,9 +1,37 @@
 let view = 0;
 let iframes = [];
 
+function actualizarIconos() {
+  let icono1 = document.getElementById('icono1');
+  let icono2 = document.getElementById('icono2');
+
+  console.log("🔍 Estado actual de view:", view);
+
+  // Icono 1
+  if (view === 0) {
+    icono1.classList.remove("visible");
+    icono1.classList.add("oculto");
+    console.log("📌 Ocultando icono1 (primer iframe)");
+  } else {
+    icono1.classList.remove("oculto");
+    icono1.classList.add("visible");
+    console.log("📌 Mostrando icono1");
+  }
+
+  // Icono 2
+  if (view === iframes.length - 1) {
+    icono2.classList.remove("visible");
+    icono2.classList.add("oculto");
+    console.log("📌 Ocultando icono2 (último iframe)");
+  } else {
+    icono2.classList.remove("oculto");
+    icono2.classList.add("visible");
+    console.log("📌 Mostrando icono2");
+  }
+}
+
 function ingresar(direction) {
   try {
-
     const current = iframes[view];
     const newView = view + direction;
 
@@ -16,16 +44,13 @@ function ingresar(direction) {
     if (leftArrow) leftArrow.style.pointerEvents = "none";
     if (rightArrow) rightArrow.style.pointerEvents = "none";
 
-    // ✅ Oculta todos excepto el actual y el siguiente
     iframes.forEach((iframe, idx) => {
       iframe.style.visibility = (idx === view || idx === newView) ? "visible" : "hidden";
     });
 
-    // ✅ Asegura que el siguiente iframe esté en posición y zIndex adecuado desde ya
     next.style.zIndex = 1;
     next.style.display = "block";
 
-    // Aplica animación de salida
     const outClass = direction === 1 ? "animate-out-right" : "animate-out-left";
     current.classList.remove("animate-out-left", "animate-out-right");
     current.classList.add(outClass);
@@ -34,27 +59,26 @@ function ingresar(direction) {
       current.removeEventListener("animationend", handleOut);
       current.classList.remove(outClass);
 
-      // ✅ Baja el z-index del saliente
       current.style.zIndex = 0;
-
-      // ✅ Sube el z-index del nuevo
       next.style.zIndex = 2;
 
-      // ✅ Oculta los demás de nuevo
       iframes.forEach((iframe, idx) => {
         iframe.style.visibility = idx === newView ? "visible" : "hidden";
       });
 
       view = newView;
 
+      // 🔹 Actualiza iconos después de cambiar iframe
+      actualizarIconos();
+
       if (leftArrow) leftArrow.style.pointerEvents = "auto";
       if (rightArrow) rightArrow.style.pointerEvents = "auto";
     });
+
   } catch (error) {
     console.error("Error en ingresar:", error);
   }
 }
-
 
 window.toggleMusica = function toggleMusica() {
   const audio = document.getElementById("miAudio");
@@ -68,6 +92,7 @@ window.toggleMusica = function toggleMusica() {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  actualizarIconos();
   iframes = Array.from(document.querySelectorAll(".page")); // ✅ Ahora sí estará en orden
 
   iframes.forEach((iframe, idx) => {

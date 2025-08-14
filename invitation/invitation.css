@@ -155,3 +155,17 @@ body, html{
 .iframe.animate-in-left {
     animation: pageTurnInLeft 1s ease-in-out backwards;
 }
+
+#icono1, #icono2 {
+  transition: opacity 0.1s ease; /* Cambia 0.2s a 0.1s si quieres más rápido */
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.oculto {
+  opacity: 0;
+  pointer-events: none;
+}

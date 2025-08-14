@@ -15,7 +15,7 @@ html {
   flex-direction: column;
   text-align: center;
   justify-content: space-around;
-  padding: 4%;
+  padding: 2% 5%;
 }
 
 hr {
@@ -178,4 +178,10 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
   transform: scale(1);
   content: "✓";
+}
+
+/* IMGs Temporal*/
+img{
+  width: 60px;
+  height: 60px;
 }

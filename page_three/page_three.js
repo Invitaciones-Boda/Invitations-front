@@ -127,7 +127,77 @@ function validarEstadoConfirmacion() {
   }
 
 };
+document.addEventListener("DOMContentLoaded", () => {
+  const iconos = [
+    {
+      id: "icono1",
+      path: "../sources/correo.json",
+      attr: "stroke",
+      color: "#cfc3bd",
+      type: "svg"
+    },
+    {
+      id: "icono-correo",
+      path: "../sources/correo.json",
+      newColor: [0.8117647, 0.76470588, 0.72941176, 1], // #cfc3bd
+      targetColors: [
+        [0, 0, 0, 1] // todos los negros
+      ],
+      type: "json"
+    }
+  ];
 
+  function replaceColors(obj, targetColors, newColor) {
+    if (Array.isArray(obj)) {
+      if (
+        obj.length === 4 &&
+        targetColors.some(c => c.every((v, i) => v === obj[i]))
+      ) {
+        for (let i = 0; i < 4; i++) {
+          obj[i] = newColor[i];
+        }
+      } else {
+        obj.forEach(item => replaceColors(item, targetColors, newColor));
+      }
+    } else if (typeof obj === "object" && obj !== null) {
+      Object.values(obj).forEach(value => replaceColors(value, targetColors, newColor));
+    }
+  }
+
+  iconos.forEach(icono => {
+    if (icono.type === "svg") {
+      const anim = lottie.loadAnimation({
+        container: document.getElementById(icono.id),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: icono.path
+      });
+      anim.addEventListener("DOMLoaded", () => {
+        document.querySelectorAll(`#${icono.id} svg path`).forEach(path => {
+          path.setAttribute(icono.attr, icono.color);
+        });
+      });
+    } else if (icono.type === "json") {
+      fetch(icono.path)
+        .then(res => res.json())
+        .then(data => {
+          // Cambiar colores
+          replaceColors(data, icono.targetColors, icono.newColor);
+          
+          // Cargar animación
+          lottie.loadAnimation({
+            container: document.getElementById(icono.id),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data
+          });
+        })
+        .catch(err => console.error("Error cargando", icono.path, err));
+    }
+  });
+});
 function generarCheckboxInvitados() {
   const invitadosDiv = document.querySelector(".invitados");
   invitadosDiv.innerHTML = ""; // Limpiar contenido actual
