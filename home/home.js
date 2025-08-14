@@ -97,3 +97,4 @@ window.openPopUp = function () {
   // Cambiar display a flex
   popUp.style.display = "flex";
 };
+ 

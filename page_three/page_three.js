@@ -1,6 +1,8 @@
 import { customConfirm } from '../confirm.js'
 import { Toast } from '../toast.js';
 
+const form = document.getElementById("Popup");
+
 function confirmarAsistenciaInvitados(data) {
   $.ajax({
     url: "https://samlop-backend.online/invitation/confirmacion/",
@@ -44,7 +46,6 @@ window.cerrarPopupConfirmarAsistencia = function cerrarPopupConfirmarAsistencia(
 window.confirmarAsistencia = async function confirmarAsistencia(event) {
   event.preventDefault();
 
-  let form = document.getElementById("Popup");
   if (!form) {
     Toast.error("No se encontró el formulario de confirmación.");
     return;
