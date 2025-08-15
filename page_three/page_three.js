@@ -1,11 +1,12 @@
 import { customConfirm } from '../confirm.js'
 import { Toast } from '../toast.js';
+import { ENV } from '../utils.js'
 
 const form = document.getElementById("Popup");
 
 function confirmarAsistenciaInvitados(data) {
   $.ajax({
-    url: "https://samlop-backend.online/invitation/confirmacion/",
+    url: `${ENV.urlApi}/invitation/confirmacion/`,
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(data),
@@ -79,7 +80,7 @@ window.confirmarAsistencia = async function confirmarAsistencia(event) {
     let codigo = localStorage.getItem("codigo");
 
     let data = {
-      codigo: codigo || "sin-codigo",
+      codigo: codigo || null,
       invitados: confirmados,
       confirmados: confirmados.length,
     };

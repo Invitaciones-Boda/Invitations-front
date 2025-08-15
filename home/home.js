@@ -1,12 +1,34 @@
 import { Toast } from '../toast.js'
+import { ENV } from '../utils.js'
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Busca la cookie que empieza con el nombre
+            if (cookie.startsWith(name + "=")) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+const csrftoken = getCookie("csrftoken");
 
 // FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
 async function ingresar(valor) {
+  const csrftoken = getCookie("csrftoken");
   return new Promise(function (resolve, reject) {
     $.ajax({
-      url: "https://samlop-backend.online/invitation/ingreso/",
+      url: `${ENV.urlApi}/invitation/ingreso/`,
       type: "POST",
-      data: { codigo: valor },
+      contentType: "application/json",
+      data: JSON.stringify({ codigo: valor }),
+      headers: { "X-CSRFToken": csrftoken },
       success: function (response) {
         console.log("Response: ", response);
         resolve(response);
