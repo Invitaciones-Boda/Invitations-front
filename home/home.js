@@ -17,11 +17,8 @@ function getCookie(name) {
   return cookieValue;
 }
 
-const csrftoken = getCookie("csrftoken");
-
 // FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
 async function ingresar(valor) {
-  const csrftoken = getCookie("csrftoken");
   return new Promise(function (resolve, reject) {
     $.ajax({
       url: `${ENV.urlApi}/invitation/ingreso/`,
