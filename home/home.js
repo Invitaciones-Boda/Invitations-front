@@ -1,28 +1,12 @@
 import { Toast } from "../toast.js";
 import { ENV } from "../utils.js";
 
-function getCookie(name) {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== "") {
-    const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      // Busca la cookie que empieza con el nombre
-      if (cookie.startsWith(name + "=")) {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-}
-
 // FUNCION PARA INGRESAR AL BACKEND USANDO AJAX
 async function ingresar(valor) {
   return new Promise(function (resolve, reject) {
     console.log('GET Initiation');
     $.ajax({
-      url: `${ENV.urlApi}/invitation/ingreso`,
+      url: `${ENV.urlApi}/invitation/ingreso/`,
       type: "GET",
       data: { codigo: valor },
       success: function (response) {
