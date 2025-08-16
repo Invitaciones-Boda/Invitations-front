@@ -253,9 +253,6 @@ fetch('../sources/correo-electronico.json')
       animationData: data
     });
   });
-  
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   generarCheckboxInvitados
