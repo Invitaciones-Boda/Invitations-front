@@ -25,10 +25,8 @@ async function ingresar(valor) {
   return new Promise(function (resolve, reject) {
     $.ajax({
       url: `${ENV.urlApi}/invitation/ingreso/`,
-      type: "POST",
-      contentType: "application/json",
-      data: JSON.stringify({ codigo: valor }),
-      headers: { "X-CSRFToken": csrftoken },
+      type: "GET",
+      data: { codigo: valor },
       success: function (response) {
         console.log("Response: ", response);
         resolve(response);
