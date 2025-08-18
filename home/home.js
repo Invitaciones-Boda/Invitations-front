@@ -6,7 +6,7 @@ async function ingresar(valor) {
   return new Promise(function (resolve, reject) {
     console.log('GET Initiation');
     $.ajax({
-      url: `${ENV.urlApi}/invitation/ingreso/`,
+      url: `${ENV.urlApi}/invitation/ingreso`,
       type: "GET",
       data: { codigo: valor },
       success: function (response) {
